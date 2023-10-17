@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tiempos>
+  <tiempo name="0"/>
+  <tiempo name="15"/>
+  <tiempo name="30"/>
+  <tiempo name="60"/>
+  <tiempo name="90"/>
+  <tiempo name="120"/>
+</tiempos>

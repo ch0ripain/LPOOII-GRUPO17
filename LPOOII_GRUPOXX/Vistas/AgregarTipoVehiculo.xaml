@@ -1,0 +1,15 @@
+﻿<Window x:Class="Vistas.AgregarTipoVehiculo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AgregarTipoVehiculo" Height="356" Width="300">
+    <Grid>
+        <Label Content="Descripción:" Height="28" HorizontalAlignment="Left" Margin="42,76,0,0" Name="lblTipoVehiculoDescripcion" VerticalAlignment="Top" />
+        <Label Content="Tarifa:" Height="28" HorizontalAlignment="Left" Margin="67,174,0,0" Name="lblTipoVehiculoTarifa" VerticalAlignment="Top" />
+        <Label Content="TV Código:" Height="28" HorizontalAlignment="Left" Margin="40,208,0,0" Name="lblTipoVehiculoTVCodigo" VerticalAlignment="Top" />
+        <TextBox Height="68" HorizontalAlignment="Left" Margin="42,100,0,0" Name="txtTipoVehiculoDescripcion" VerticalAlignment="Top" Width="194" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="116,178,0,0" Name="txtTipoVehiculoTarifa" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="116,212,0,0" Name="txtTipoVehiculoTVCodigo" VerticalAlignment="Top" Width="120" />
+        <Label Content="DATOS DEL TIPO DE VEHICULO" Height="28" HorizontalAlignment="Center" Margin="42,27,42,0" Name="lblClienteTitulo" VerticalAlignment="Top" Width="194" HorizontalContentAlignment="Center" />
+        <Button Style="{StaticResource PlantillaBotonardo}" Content="Agregar" Height="23" HorizontalAlignment="Center" Name="btnCargarTipoVehiculo" VerticalAlignment="Bottom" Width="194" Click="btnCargarTipoVehiculo_Click" Margin="0,0,0,35" />
+    </Grid>
+</Window>

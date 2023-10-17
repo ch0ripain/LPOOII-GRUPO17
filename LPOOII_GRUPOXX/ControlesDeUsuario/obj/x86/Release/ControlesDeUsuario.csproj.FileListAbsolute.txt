@@ -1,0 +1,13 @@
+C:\Users\leand\Desktop\LPOO2\LPOOII_GRUPOXX\ControlesDeUsuario\bin\Release\ControlesDeUsuario.exe
+C:\Users\leand\Desktop\LPOO2\LPOOII_GRUPOXX\ControlesDeUsuario\bin\Release\ControlesDeUsuario.pdb
+C:\Users\leand\Desktop\LPOO2\LPOOII_GRUPOXX\ControlesDeUsuario\obj\x86\Release\LoginUC.baml
+C:\Users\leand\Desktop\LPOO2\LPOOII_GRUPOXX\ControlesDeUsuario\obj\x86\Release\MainWindow.baml
+C:\Users\leand\Desktop\LPOO2\LPOOII_GRUPOXX\ControlesDeUsuario\obj\x86\Release\LoginUC.g.cs
+C:\Users\leand\Desktop\LPOO2\LPOOII_GRUPOXX\ControlesDeUsuario\obj\x86\Release\MainWindow.g.cs
+C:\Users\leand\Desktop\LPOO2\LPOOII_GRUPOXX\ControlesDeUsuario\obj\x86\Release\App.g.cs
+C:\Users\leand\Desktop\LPOO2\LPOOII_GRUPOXX\ControlesDeUsuario\obj\x86\Release\ControlesDeUsuario_MarkupCompile.cache
+C:\Users\leand\Desktop\LPOO2\LPOOII_GRUPOXX\ControlesDeUsuario\obj\x86\Release\ControlesDeUsuario.g.resources
+C:\Users\leand\Desktop\LPOO2\LPOOII_GRUPOXX\ControlesDeUsuario\obj\x86\Release\ControlesDeUsuario.Properties.Resources.resources
+C:\Users\leand\Desktop\LPOO2\LPOOII_GRUPOXX\ControlesDeUsuario\obj\x86\Release\ControlesDeUsuario.csproj.GenerateResource.Cache
+C:\Users\leand\Desktop\LPOO2\LPOOII_GRUPOXX\ControlesDeUsuario\obj\x86\Release\ControlesDeUsuario.exe
+C:\Users\leand\Desktop\LPOO2\LPOOII_GRUPOXX\ControlesDeUsuario\obj\x86\Release\ControlesDeUsuario.pdb
