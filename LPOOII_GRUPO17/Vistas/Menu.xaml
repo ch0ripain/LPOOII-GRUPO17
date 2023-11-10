@@ -1,8 +1,11 @@
 ﻿<Window x:Class="Vistas.Menu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Menu" Height="500" Width="550" Loaded="Window_Loaded">
+        Title="Menu" Height="500" Width="550" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Vistas;component/Images/_874790fe-cf30-4adf-b8a9-972bd8094108.jpg" />
+        </Grid.Background>
         <Menu HorizontalAlignment="Stretch" Name="menuPrincipal" VerticalAlignment="Top">
             <MenuItem Header="Gestión de Sectores" Name="menuItemSectores" />
             <MenuItem Header="Tipos de Vehiculo" Name="menuItemTipoVehiculo" >

@@ -21,7 +21,7 @@
             <Label Content="Tarifa" Height="28" Name="lblTarifa" HorizontalAlignment="Center" />
             <TextBox Height="23" Name="txtTarifa" Width="160" IsReadOnly="True" />
             <Label Content="Duración" Height="28" Name="lblDuracion" HorizontalAlignment="Center" />
-            <ComboBox ItemsSource="{Binding Source={StaticResource Tiempos},XPath=tiempo/@name}" SelectedIndex="0" Width="160" Name="cmbDuracion"></ComboBox>
+            <ComboBox ItemsSource="{Binding Source={StaticResource Tiempos},XPath=tiempo/@name}" SelectedIndex="3" Width="160" Name="cmbDuracion"></ComboBox>
             <Button Content="Registrar" Height="23" Name="btnRegistrarEntrada" Width="160" Margin="0,25" Click="btnRegistrarEntrada_Click" />
         </StackPanel>
     </Grid>

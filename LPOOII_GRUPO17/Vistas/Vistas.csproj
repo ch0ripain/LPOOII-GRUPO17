@@ -213,6 +213,9 @@
   <ItemGroup>
     <Resource Include="Roles.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_874790fe-cf30-4adf-b8a9-972bd8094108.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

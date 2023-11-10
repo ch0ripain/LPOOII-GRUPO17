@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Vistas.VistaPreviaDeTicket"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Ingreso de Ticket" Height="390" Width="300" Loaded="Window_Loaded">
+        Title="Ingreso de Ticket" Height="390" Width="300" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <FixedDocument>
         <PageContent>
             <FixedPage>
@@ -20,7 +20,7 @@
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,286,0,0" Name="txbTarifa" Text="Tarifa: " VerticalAlignment="Top" FontFamily="Arial" />
         <TextBlock FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="160,286,0,0" Name="txbTotal" Text="TOTAL: " VerticalAlignment="Top" FontFamily="Arial" />
         <Rectangle Fill="Black" Height="3" Margin="0,310,0,0" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,323,0,0" Name="txbUsuario" Text="Empleado:" VerticalAlignment="Top" FontFamily="Arial" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,323,0,0" Name="txbUsuario" Text="Empleado: " VerticalAlignment="Top" FontFamily="Arial" />
     </Grid>
             </FixedPage>
         </PageContent>

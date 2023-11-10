@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Vistas.VistaPreviaDeImpresion"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Vista previa de impresión" Height="360" Width="650">
+        Title="Vista previa de impresión" Height="360" Width="650" WindowStartupLocation="CenterScreen">
     <StackPanel Width="600">
         <FlowDocumentReader Canvas.Left="12" Canvas.Top="28" Height="280">
             <FlowDocument Name="DocMain">

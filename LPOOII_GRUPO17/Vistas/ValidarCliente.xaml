@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:svc="clr-namespace:ClasesBase;assembly=ClasesBase"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
-        Title="Modificar Cliente" Height="439" Width="318" FlowDirection="LeftToRight">
+        Title="Modificar Cliente" Height="439" Width="318" FlowDirection="LeftToRight" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ObjectDataProvider x:Key="DATA_CLIENTE" ObjectType="{x:Type svc:TrabajarClientes}" MethodName="TraerCliente">
             <ObjectDataProvider.MethodParameters>

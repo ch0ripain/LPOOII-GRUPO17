@@ -80,6 +80,9 @@ namespace Vistas
             cmbSectorCodigo.DisplayMemberPath = "Descripcion";
             cmbSectorCodigo.SelectedValuePath = "SectorCodigo";
             cmbSectorCodigo.SelectedIndex = 0;
+
+            //DNI del cliente
+            txtClienteDNI.Text = "4444"; //Falta un boton para buscar un cliente y poder seleccionarlo
         }
 
         private void cmbTVCodigo_SelectionChanged(object sender, SelectionChangedEventArgs e)

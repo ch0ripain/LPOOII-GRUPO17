@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Vistas.AgregarTipoVehiculo"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AgregarTipoVehiculo" Height="356" Width="300">
+        Title="AgregarTipoVehiculo" Height="356" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Descripción:" Height="28" HorizontalAlignment="Left" Margin="42,76,0,0" Name="lblTipoVehiculoDescripcion" VerticalAlignment="Top" />
         <Label Content="Tarifa:" Height="28" HorizontalAlignment="Left" Margin="67,174,0,0" Name="lblTipoVehiculoTarifa" VerticalAlignment="Top" />

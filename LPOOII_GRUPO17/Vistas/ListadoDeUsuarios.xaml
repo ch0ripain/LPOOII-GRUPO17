@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:coleccionUsuario="clr-namespace:ClasesBase;assembly=ClasesBase"
         xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
-        Title="Listado De Usuarios" Height="350" Width="500">
+        Title="Listado De Usuarios" Height="350" Width="500" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ObjectDataProvider
             x:Key="dsUsuarios"
