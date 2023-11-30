@@ -27,21 +27,21 @@
         <ListView Grid.Row="1" Name="lsvVenta" ItemsSource="{Binding Source={StaticResource VentasFiltradas}}" Margin="10,75,10,45">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="N° Ticket" DisplayMemberBinding="{Binding TicketNro}"/>
-                    <GridViewColumn Header="Fecha de entrada"  DisplayMemberBinding="{Binding FechaHoraEnt}"/>
-                    <GridViewColumn Header="Fecha de salida"  DisplayMemberBinding="{Binding FechaHoraSal}"/>
-                    <GridViewColumn Header="DNI Cliente"  DisplayMemberBinding="{Binding ClienteDNI}"/>
-                    <GridViewColumn Header="AyN" DisplayMemberBinding="{Binding AyN}"/>
-                    <GridViewColumn Header="Telefono" DisplayMemberBinding="{Binding Telefono}"/>
-                    <GridViewColumn Header="TVCodigo" DisplayMemberBinding="{Binding TVCodigo}"/>
-                    <GridViewColumn Header="Tipo Vehiculo" DisplayMemberBinding="{Binding TipoVehiculo}"/>
-                    <GridViewColumn Header="Tarifa" DisplayMemberBinding="{Binding Tarifa}"/>
-                    <GridViewColumn Header="Patente" DisplayMemberBinding="{Binding Patente}"/>
-                    <GridViewColumn Header="Codigo Sector" DisplayMemberBinding="{Binding SectorCodigo}"/>
-                    <GridViewColumn Header="Descripcion" DisplayMemberBinding="{Binding SectorDescripcion}"/>
-                    <GridViewColumn Header="Identificador" DisplayMemberBinding="{Binding SectorIdentificador}"/>
-                    <GridViewColumn Header="Duración" DisplayMemberBinding="{Binding Duracion}"/>
-                    <GridViewColumn Header="Total" DisplayMemberBinding="{Binding Total}"/>
+                    <GridViewColumn Header="N° Ticket" Width="60" DisplayMemberBinding="{Binding TicketNro}"/>
+                    <GridViewColumn Header="Fecha de entrada" Width="135"  DisplayMemberBinding="{Binding FechaHoraEnt}"/>
+                    <GridViewColumn Header="Fecha de salida" Width="135"  DisplayMemberBinding="{Binding FechaHoraSal}"/>
+                    <GridViewColumn Header="DNI Cliente" Width="75" DisplayMemberBinding="{Binding ClienteDNI}"/>
+                    <GridViewColumn Header="AyN" Width="125" DisplayMemberBinding="{Binding AyN}"/>
+                    <GridViewColumn Header="Telefono" Width="80" DisplayMemberBinding="{Binding Telefono}"/>
+                    <GridViewColumn Header="TVCodigo" Width="60" DisplayMemberBinding="{Binding TVCodigo}"/>
+                    <GridViewColumn Header="Tipo Vehiculo" Width="90" DisplayMemberBinding="{Binding TipoVehiculo}"/>
+                    <GridViewColumn Header="Tarifa" Width="65" DisplayMemberBinding="{Binding Tarifa}"/>
+                    <GridViewColumn Header="Patente" Width="70" DisplayMemberBinding="{Binding Patente}"/>
+                    <GridViewColumn Header="Codigo Sector" Width="80" DisplayMemberBinding="{Binding SectorCodigo}"/>
+                    <GridViewColumn Header="Descripcion" Width="70" DisplayMemberBinding="{Binding SectorDescripcion}"/>
+                    <GridViewColumn Header="Identificador" Width="71" DisplayMemberBinding="{Binding SectorIdentificador}"/>
+                    <GridViewColumn Header="Duración" Width="70" DisplayMemberBinding="{Binding Duracion}"/>
+                    <GridViewColumn Header="Total" Width="60" DisplayMemberBinding="{Binding Total}"/>
                 </GridView>
             </ListView.View>
         </ListView>
