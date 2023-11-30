@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\leand\Desktop\LPOOII-TP_Final\LPOOII_GRUPO17\Vistas\obj\x86\Debug\
+C:\Users\amaru\Documents\GitHub\LPOOII-GRUPO17\LPOOII_GRUPO17\Vistas\obj\x86\Debug\
 Vistas
 none
 false
 DEBUG;TRACE
-C:\Users\leand\Desktop\LPOOII-TP_Final\LPOOII_GRUPO17\Vistas\App.xaml
+C:\Users\amaru\Documents\GitHub\LPOOII-GRUPO17\LPOOII_GRUPO17\Vistas\App.xaml
 29-1771291859
-
+21486904978
 321965669342
-14-201405322
+141681121268
 ABMClientes.xaml;ABMTipoVehiculo.xaml;ABMUsuarios.xaml;AcercaDe.xaml;AgregarCliente.xaml;AgregarTipoVehiculo.xaml;EstadoSector.xaml;EstilosMain.xaml;ListadoDeClientes.xaml;ListadoDeSectoresOcupados.xaml;ListadoDeUsuarios.xaml;ListadoDeVentas.xaml;ListarTipoVehiculo.xaml;Login.xaml;MainWindow.xaml;Menu.xaml;PlantillasMain.xaml;PresentacionApp.xaml;RegistrarEntrada.xaml;RegistrarSalida.xaml;ValidarCliente.xaml;ValidarTV.xaml;VehiculosEnPlaya.xaml;VistaPreviaDeImpresion.xaml;VistaPreviaDeImpresionClientes.xaml;VistaPreviaDeImpresionListadoSectoresOcupados.xaml;VistaPreviaDeImpresionListadoVentas.xaml;VistaPreviaDeTicket.xaml;VistaPreviaDeTicketSalida.xaml;
 
 False

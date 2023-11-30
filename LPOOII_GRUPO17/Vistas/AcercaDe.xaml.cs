@@ -13,18 +13,27 @@ using System.Windows.Shapes;
 
 namespace Vistas
 {
-    /// <summary>
-    /// Interaction logic for AcercaDe.xaml
-    /// </summary>
     public partial class AcercaDe : Window
     {
         public AcercaDe()
         {
             InitializeComponent();
+
+            // Cargar el video desde el código-behind
+            string videoFileName = "Media\\intro.mp4";
+            string videoFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, videoFileName);
+
+            // Crear una instancia de Uri con la ruta del archivo de video
+            Uri videoUri = new Uri(videoFilePath, UriKind.RelativeOrAbsolute);
+
+            // Establecer la fuente del MediaElement y reproducir el video
+            myMediaElement.Source = videoUri;
+            myMediaElement.Play();
         }
 
         private void btnCerrarVideo_Click(object sender, RoutedEventArgs e)
         {
+            myMediaElement.Stop();
             this.Close();
         }
     }

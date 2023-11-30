@@ -34,6 +34,8 @@ namespace ClasesBase {
         
         private UsuarioDataTable tableUsuario;
         
+        private ZonaDataTable tableZona;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -76,6 +78,9 @@ namespace ClasesBase {
                 }
                 if ((ds.Tables["Usuario"] != null)) {
                     base.Tables.Add(new UsuarioDataTable(ds.Tables["Usuario"]));
+                }
+                if ((ds.Tables["Zona"] != null)) {
+                    base.Tables.Add(new ZonaDataTable(ds.Tables["Zona"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -142,6 +147,16 @@ namespace ClasesBase {
         public UsuarioDataTable Usuario {
             get {
                 return this.tableUsuario;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ZonaDataTable Zona {
+            get {
+                return this.tableZona;
             }
         }
         
@@ -227,6 +242,9 @@ namespace ClasesBase {
                 if ((ds.Tables["Usuario"] != null)) {
                     base.Tables.Add(new UsuarioDataTable(ds.Tables["Usuario"]));
                 }
+                if ((ds.Tables["Zona"] != null)) {
+                    base.Tables.Add(new ZonaDataTable(ds.Tables["Zona"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -290,6 +308,12 @@ namespace ClasesBase {
                     this.tableUsuario.InitVars();
                 }
             }
+            this.tableZona = ((ZonaDataTable)(base.Tables["Zona"]));
+            if ((initTable == true)) {
+                if ((this.tableZona != null)) {
+                    this.tableZona.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -310,6 +334,8 @@ namespace ClasesBase {
             base.Tables.Add(this.tableTipoVehiculo);
             this.tableUsuario = new UsuarioDataTable();
             base.Tables.Add(this.tableUsuario);
+            this.tableZona = new ZonaDataTable();
+            base.Tables.Add(this.tableZona);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -339,6 +365,12 @@ namespace ClasesBase {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeUsuario() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeZona() {
             return false;
         }
         
@@ -411,6 +443,9 @@ namespace ClasesBase {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void UsuarioRowChangeEventHandler(object sender, UsuarioRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void ZonaRowChangeEventHandler(object sender, ZonaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -529,10 +564,10 @@ namespace ClasesBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ClienteRow AddClienteRow(string Apellido, string Nombre, string Telefono) {
+            public ClienteRow AddClienteRow(int ClienteDNI, string Apellido, string Nombre, string Telefono) {
                 ClienteRow rowClienteRow = ((ClienteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        ClienteDNI,
                         Apellido,
                         Nombre,
                         Telefono};
@@ -575,11 +610,7 @@ namespace ClasesBase {
                 base.Columns.Add(this.columnNombre);
                 this.columnTelefono = new global::System.Data.DataColumn("Telefono", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTelefono);
-                this.columnClienteDNI.AutoIncrement = true;
-                this.columnClienteDNI.AutoIncrementSeed = -1;
-                this.columnClienteDNI.AutoIncrementStep = -1;
                 this.columnClienteDNI.AllowDBNull = false;
-                this.columnClienteDNI.ReadOnly = true;
                 this.columnApellido.AllowDBNull = false;
                 this.columnApellido.MaxLength = 50;
                 this.columnNombre.AllowDBNull = false;
@@ -727,6 +758,10 @@ namespace ClasesBase {
             
             private global::System.Data.DataColumn columnHabilitado;
             
+            private global::System.Data.DataColumn columnZonaCodigo;
+            
+            private global::System.Data.DataColumn columnTiempoDisponible;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public SectorDataTable() {
@@ -794,6 +829,22 @@ namespace ClasesBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ZonaCodigoColumn {
+                get {
+                    return this.columnZonaCodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TiempoDisponibleColumn {
+                get {
+                    return this.columnTiempoDisponible;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -829,13 +880,15 @@ namespace ClasesBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SectorRow AddSectorRow(string Descripcion, string Identificador, bool Habilitado) {
+            public SectorRow AddSectorRow(string Descripcion, string Identificador, bool Habilitado, int ZonaCodigo, System.DateTime TiempoDisponible) {
                 SectorRow rowSectorRow = ((SectorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Descripcion,
                         Identificador,
-                        Habilitado};
+                        Habilitado,
+                        ZonaCodigo,
+                        TiempoDisponible};
                 rowSectorRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSectorRow);
                 return rowSectorRow;
@@ -862,6 +915,8 @@ namespace ClasesBase {
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnIdentificador = base.Columns["Identificador"];
                 this.columnHabilitado = base.Columns["Habilitado"];
+                this.columnZonaCodigo = base.Columns["ZonaCodigo"];
+                this.columnTiempoDisponible = base.Columns["TiempoDisponible"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -875,6 +930,10 @@ namespace ClasesBase {
                 base.Columns.Add(this.columnIdentificador);
                 this.columnHabilitado = new global::System.Data.DataColumn("Habilitado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHabilitado);
+                this.columnZonaCodigo = new global::System.Data.DataColumn("ZonaCodigo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnZonaCodigo);
+                this.columnTiempoDisponible = new global::System.Data.DataColumn("TiempoDisponible", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTiempoDisponible);
                 this.columnSectorCodigo.AutoIncrement = true;
                 this.columnSectorCodigo.AutoIncrementSeed = -1;
                 this.columnSectorCodigo.AutoIncrementStep = -1;
@@ -885,6 +944,7 @@ namespace ClasesBase {
                 this.columnIdentificador.AllowDBNull = false;
                 this.columnIdentificador.MaxLength = 50;
                 this.columnHabilitado.AllowDBNull = false;
+                this.columnZonaCodigo.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1412,6 +1472,8 @@ namespace ClasesBase {
             
             private global::System.Data.DataColumn columnTarifa;
             
+            private global::System.Data.DataColumn columnImagen;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TipoVehiculoDataTable() {
@@ -1471,6 +1533,14 @@ namespace ClasesBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ImagenColumn {
+                get {
+                    return this.columnImagen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1506,12 +1576,13 @@ namespace ClasesBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TipoVehiculoRow AddTipoVehiculoRow(string Descripcion, decimal Tarifa) {
+            public TipoVehiculoRow AddTipoVehiculoRow(string Descripcion, decimal Tarifa, string Imagen) {
                 TipoVehiculoRow rowTipoVehiculoRow = ((TipoVehiculoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Descripcion,
-                        Tarifa};
+                        Tarifa,
+                        Imagen};
                 rowTipoVehiculoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTipoVehiculoRow);
                 return rowTipoVehiculoRow;
@@ -1537,6 +1608,7 @@ namespace ClasesBase {
                 this.columnTVCodigo = base.Columns["TVCodigo"];
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnTarifa = base.Columns["Tarifa"];
+                this.columnImagen = base.Columns["Imagen"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1548,6 +1620,8 @@ namespace ClasesBase {
                 base.Columns.Add(this.columnDescripcion);
                 this.columnTarifa = new global::System.Data.DataColumn("Tarifa", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTarifa);
+                this.columnImagen = new global::System.Data.DataColumn("Imagen", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImagen);
                 this.columnTVCodigo.AutoIncrement = true;
                 this.columnTVCodigo.AutoIncrementSeed = -1;
                 this.columnTVCodigo.AutoIncrementStep = -1;
@@ -1556,6 +1630,8 @@ namespace ClasesBase {
                 this.columnDescripcion.AllowDBNull = false;
                 this.columnDescripcion.MaxLength = 50;
                 this.columnTarifa.AllowDBNull = false;
+                this.columnImagen.AllowDBNull = false;
+                this.columnImagen.MaxLength = 150;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1996,6 +2072,290 @@ namespace ClasesBase {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ZonaDataTable : global::System.Data.TypedTableBase<ZonaRow> {
+            
+            private global::System.Data.DataColumn columnZonaCodigo;
+            
+            private global::System.Data.DataColumn columnDescripcion;
+            
+            private global::System.Data.DataColumn columnPiso;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZonaDataTable() {
+                this.TableName = "Zona";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ZonaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ZonaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ZonaCodigoColumn {
+                get {
+                    return this.columnZonaCodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionColumn {
+                get {
+                    return this.columnDescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PisoColumn {
+                get {
+                    return this.columnPiso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZonaRow this[int index] {
+                get {
+                    return ((ZonaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ZonaRowChangeEventHandler ZonaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ZonaRowChangeEventHandler ZonaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ZonaRowChangeEventHandler ZonaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ZonaRowChangeEventHandler ZonaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddZonaRow(ZonaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZonaRow AddZonaRow(string Descripcion, string Piso) {
+                ZonaRow rowZonaRow = ((ZonaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Descripcion,
+                        Piso};
+                rowZonaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowZonaRow);
+                return rowZonaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ZonaDataTable cln = ((ZonaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ZonaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnZonaCodigo = base.Columns["ZonaCodigo"];
+                this.columnDescripcion = base.Columns["Descripcion"];
+                this.columnPiso = base.Columns["Piso"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnZonaCodigo = new global::System.Data.DataColumn("ZonaCodigo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnZonaCodigo);
+                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcion);
+                this.columnPiso = new global::System.Data.DataColumn("Piso", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPiso);
+                this.columnZonaCodigo.AutoIncrement = true;
+                this.columnZonaCodigo.AutoIncrementSeed = -1;
+                this.columnZonaCodigo.AutoIncrementStep = -1;
+                this.columnZonaCodigo.AllowDBNull = false;
+                this.columnZonaCodigo.ReadOnly = true;
+                this.columnDescripcion.AllowDBNull = false;
+                this.columnDescripcion.MaxLength = 50;
+                this.columnPiso.AllowDBNull = false;
+                this.columnPiso.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZonaRow NewZonaRow() {
+                return ((ZonaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ZonaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ZonaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ZonaRowChanged != null)) {
+                    this.ZonaRowChanged(this, new ZonaRowChangeEvent(((ZonaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ZonaRowChanging != null)) {
+                    this.ZonaRowChanging(this, new ZonaRowChangeEvent(((ZonaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ZonaRowDeleted != null)) {
+                    this.ZonaRowDeleted(this, new ZonaRowChangeEvent(((ZonaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ZonaRowDeleting != null)) {
+                    this.ZonaRowDeleting(this, new ZonaRowChangeEvent(((ZonaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveZonaRow(ZonaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                playaDataSet ds = new playaDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ZonaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class ClienteRow : global::System.Data.DataRow {
@@ -2110,6 +2470,45 @@ namespace ClasesBase {
                 set {
                     this[this.tableSector.HabilitadoColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ZonaCodigo {
+                get {
+                    return ((int)(this[this.tableSector.ZonaCodigoColumn]));
+                }
+                set {
+                    this[this.tableSector.ZonaCodigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime TiempoDisponible {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSector.TiempoDisponibleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TiempoDisponible\' in table \'Sector\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSector.TiempoDisponibleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTiempoDisponibleNull() {
+                return this.IsNull(this.tableSector.TiempoDisponibleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTiempoDisponibleNull() {
+                this[this.tableSector.TiempoDisponibleColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2284,6 +2683,17 @@ namespace ClasesBase {
                     this[this.tableTipoVehiculo.TarifaColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Imagen {
+                get {
+                    return ((string)(this[this.tableTipoVehiculo.ImagenColumn]));
+                }
+                set {
+                    this[this.tableTipoVehiculo.ImagenColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -2352,6 +2762,54 @@ namespace ClasesBase {
                 }
                 set {
                     this[this.tableUsuario.RolColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ZonaRow : global::System.Data.DataRow {
+            
+            private ZonaDataTable tableZona;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ZonaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableZona = ((ZonaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ZonaCodigo {
+                get {
+                    return ((int)(this[this.tableZona.ZonaCodigoColumn]));
+                }
+                set {
+                    this[this.tableZona.ZonaCodigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Descripcion {
+                get {
+                    return ((string)(this[this.tableZona.DescripcionColumn]));
+                }
+                set {
+                    this[this.tableZona.DescripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Piso {
+                get {
+                    return ((string)(this[this.tableZona.PisoColumn]));
+                }
+                set {
+                    this[this.tableZona.PisoColumn] = value;
                 }
             }
         }
@@ -2525,6 +2983,40 @@ namespace ClasesBase {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class ZonaRowChangeEvent : global::System.EventArgs {
+            
+            private ZonaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZonaRowChangeEvent(ZonaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZonaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
 namespace ClasesBase.playaDataSetTableAdapters {
@@ -2658,9 +3150,10 @@ namespace ClasesBase.playaDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Cliente] ([Apellido], [Nombre], [Telefono]) VALUES (@Apellido," +
-                " @Nombre, @Telefono)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Cliente] ([ClienteDNI], [Apellido], [Nombre], [Telefono]) VALU" +
+                "ES (@ClienteDNI, @Apellido, @Nombre, @Telefono)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteDNI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteDNI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Apellido", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Apellido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telefono", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2740,24 +3233,25 @@ namespace ClasesBase.playaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Apellido, string Nombre, string Telefono) {
+        public virtual int Insert(int ClienteDNI, string Apellido, string Nombre, string Telefono) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ClienteDNI));
             if ((Apellido == null)) {
                 throw new global::System.ArgumentNullException("Apellido");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Apellido));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Apellido));
             }
             if ((Nombre == null)) {
                 throw new global::System.ArgumentNullException("Nombre");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nombre));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Nombre));
             }
             if ((Telefono == null)) {
                 throw new global::System.ArgumentNullException("Telefono");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Telefono));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Telefono));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2901,15 +3395,20 @@ namespace ClasesBase.playaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("Identificador", "Identificador");
             tableMapping.ColumnMappings.Add("Habilitado", "Habilitado");
+            tableMapping.ColumnMappings.Add("ZonaCodigo", "ZonaCodigo");
+            tableMapping.ColumnMappings.Add("TiempoDisponible", "TiempoDisponible");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Sector] ([Descripcion], [Identificador], [Habilitado]) VALUES " +
-                "(@Descripcion, @Identificador, @Habilitado)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Sector] ([Descripcion], [Identificador], [Habilitado], [ZonaCo" +
+                "digo], [TiempoDisponible]) VALUES (@Descripcion, @Identificador, @Habilitado, @Z" +
+                "onaCodigo, @TiempoDisponible)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Identificador", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Identificador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Habilitado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Habilitado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZonaCodigo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZonaCodigo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TiempoDisponible", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TiempoDisponible", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2925,7 +3424,8 @@ namespace ClasesBase.playaDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT SectorCodigo, Descripcion, Identificador, Habilitado FROM dbo.Sector";
+            this._commandCollection[0].CommandText = "SELECT SectorCodigo, Descripcion, Identificador, Habilitado, ZonaCodigo, TiempoDi" +
+                "sponible FROM dbo.Sector";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2986,7 +3486,7 @@ namespace ClasesBase.playaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Descripcion, string Identificador, bool Habilitado) {
+        public virtual int Insert(string Descripcion, string Identificador, bool Habilitado, int ZonaCodigo, global::System.Nullable<global::System.DateTime> TiempoDisponible) {
             if ((Descripcion == null)) {
                 throw new global::System.ArgumentNullException("Descripcion");
             }
@@ -3000,6 +3500,13 @@ namespace ClasesBase.playaDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Identificador));
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(Habilitado));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(ZonaCodigo));
+            if ((TiempoDisponible.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(TiempoDisponible.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3161,7 +3668,7 @@ namespace ClasesBase.playaDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SectorCodigo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SectorCodigo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Duracion", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 6, 2, "Duracion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tarifa", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 6, 2, "Tarifa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 6, 2, "Total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "Total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3395,14 +3902,16 @@ namespace ClasesBase.playaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("TVCodigo", "TVCodigo");
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("Tarifa", "Tarifa");
+            tableMapping.ColumnMappings.Add("Imagen", "Imagen");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TipoVehiculo] ([Descripcion], [Tarifa]) VALUES (@Descripcion, " +
-                "@Tarifa)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TipoVehiculo] ([Descripcion], [Tarifa], [Imagen]) VALUES (@Des" +
+                "cripcion, @Tarifa, @Imagen)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tarifa", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 6, 2, "Tarifa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Imagen", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Imagen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3418,7 +3927,7 @@ namespace ClasesBase.playaDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TVCodigo, Descripcion, Tarifa FROM dbo.TipoVehiculo";
+            this._commandCollection[0].CommandText = "SELECT TVCodigo, Descripcion, Tarifa, Imagen FROM dbo.TipoVehiculo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3479,7 +3988,7 @@ namespace ClasesBase.playaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Descripcion, decimal Tarifa) {
+        public virtual int Insert(string Descripcion, decimal Tarifa, string Imagen) {
             if ((Descripcion == null)) {
                 throw new global::System.ArgumentNullException("Descripcion");
             }
@@ -3487,6 +3996,12 @@ namespace ClasesBase.playaDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Descripcion));
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(Tarifa));
+            if ((Imagen == null)) {
+                throw new global::System.ArgumentNullException("Imagen");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Imagen));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3766,6 +4281,243 @@ namespace ClasesBase.playaDataSetTableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ZonaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public ZonaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Zona";
+            tableMapping.ColumnMappings.Add("ZonaCodigo", "ZonaCodigo");
+            tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
+            tableMapping.ColumnMappings.Add("Piso", "Piso");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Zona] ([Descripcion], [Piso]) VALUES (@Descripcion, @Piso)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Piso", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Piso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ClasesBase.Properties.Settings.Default.playaConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ZonaCodigo, Descripcion, Piso FROM dbo.Zona";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(playaDataSet.ZonaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual playaDataSet.ZonaDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            playaDataSet.ZonaDataTable dataTable = new playaDataSet.ZonaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(playaDataSet.ZonaDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(playaDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Zona");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string Descripcion, string Piso) {
+            if ((Descripcion == null)) {
+                throw new global::System.ArgumentNullException("Descripcion");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Descripcion));
+            }
+            if ((Piso == null)) {
+                throw new global::System.ArgumentNullException("Piso");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Piso));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3786,6 +4538,8 @@ namespace ClasesBase.playaDataSetTableAdapters {
         private TipoVehiculoTableAdapter _tipoVehiculoTableAdapter;
         
         private UsuarioTableAdapter _usuarioTableAdapter;
+        
+        private ZonaTableAdapter _zonaTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -3874,6 +4628,20 @@ namespace ClasesBase.playaDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ZonaTableAdapter ZonaTableAdapter {
+            get {
+                return this._zonaTableAdapter;
+            }
+            set {
+                this._zonaTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -3911,6 +4679,10 @@ namespace ClasesBase.playaDataSetTableAdapters {
                             && (this._usuarioTableAdapter.Connection != null))) {
                     return this._usuarioTableAdapter.Connection;
                 }
+                if (((this._zonaTableAdapter != null) 
+                            && (this._zonaTableAdapter.Connection != null))) {
+                    return this._zonaTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -3937,6 +4709,9 @@ namespace ClasesBase.playaDataSetTableAdapters {
                     count = (count + 1);
                 }
                 if ((this._usuarioTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._zonaTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -3968,12 +4743,12 @@ namespace ClasesBase.playaDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._ticketTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Ticket.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._zonaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Zona.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._ticketTableAdapter.Update(updatedRows));
+                    result = (result + this._zonaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -3992,6 +4767,15 @@ namespace ClasesBase.playaDataSetTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._sectorTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._ticketTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Ticket.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._ticketTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4021,11 +4805,11 @@ namespace ClasesBase.playaDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._ticketTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Ticket.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._zonaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Zona.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._ticketTableAdapter.Update(addedRows));
+                    result = (result + this._zonaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4045,6 +4829,14 @@ namespace ClasesBase.playaDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._ticketTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Ticket.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._ticketTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -4055,6 +4847,14 @@ namespace ClasesBase.playaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(playaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._ticketTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Ticket.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._ticketTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._sectorTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Sector.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -4071,11 +4871,11 @@ namespace ClasesBase.playaDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._ticketTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Ticket.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._zonaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Zona.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._ticketTableAdapter.Update(deletedRows));
+                    result = (result + this._zonaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4159,6 +4959,11 @@ namespace ClasesBase.playaDataSetTableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._zonaTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._zonaTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -4234,6 +5039,15 @@ namespace ClasesBase.playaDataSetTableAdapters {
                     if (this._usuarioTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._usuarioTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._usuarioTableAdapter.Adapter);
+                    }
+                }
+                if ((this._zonaTableAdapter != null)) {
+                    revertConnections.Add(this._zonaTableAdapter, this._zonaTableAdapter.Connection);
+                    this._zonaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._zonaTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._zonaTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._zonaTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._zonaTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -4313,6 +5127,10 @@ namespace ClasesBase.playaDataSetTableAdapters {
                 if ((this._usuarioTableAdapter != null)) {
                     this._usuarioTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._usuarioTableAdapter]));
                     this._usuarioTableAdapter.Transaction = null;
+                }
+                if ((this._zonaTableAdapter != null)) {
+                    this._zonaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._zonaTableAdapter]));
+                    this._zonaTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

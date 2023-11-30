@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="PETER PARKING" Height="420" Width="420" Loaded="Window_Loaded" MaxWidth="420" MaxHeight="420" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Vistas;component/Images/mascaraspiderman.jpg">
+        Title="PETER PARKING" Height="420" Width="420" Loaded="Window_Loaded" MaxWidth="420" MaxHeight="420" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Vistas;component/Images/mascaraspiderman.jpg">
     <Window.Resources>
         <!-- Definir un color personalizado -->
         <Color x:Key="CustomProgressBarColor">#1a5575</Color>

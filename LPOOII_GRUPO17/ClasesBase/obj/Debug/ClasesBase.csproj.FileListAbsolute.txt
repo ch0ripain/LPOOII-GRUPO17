@@ -16,3 +16,10 @@ C:\Users\leand\Desktop\LPOOII-TP_Final\LPOOII_GRUPO17\ClasesBase\bin\Debug\Clase
 C:\Users\leand\Desktop\LPOOII-TP_Final\LPOOII_GRUPO17\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
 C:\Users\leand\Desktop\LPOOII-TP_Final\LPOOII_GRUPO17\ClasesBase\obj\Debug\ClasesBase.dll
 C:\Users\leand\Desktop\LPOOII-TP_Final\LPOOII_GRUPO17\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\amaru\Documents\GitHub\LPOOII-GRUPO17\LPOOII_GRUPO17\ClasesBase\bin\Debug\playa.mdf
+C:\Users\amaru\Documents\GitHub\LPOOII-GRUPO17\LPOOII_GRUPO17\ClasesBase\bin\Debug\playa_log.ldf
+C:\Users\amaru\Documents\GitHub\LPOOII-GRUPO17\LPOOII_GRUPO17\ClasesBase\bin\Debug\ClasesBase.dll.config
+C:\Users\amaru\Documents\GitHub\LPOOII-GRUPO17\LPOOII_GRUPO17\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\amaru\Documents\GitHub\LPOOII-GRUPO17\LPOOII_GRUPO17\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\amaru\Documents\GitHub\LPOOII-GRUPO17\LPOOII_GRUPO17\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\amaru\Documents\GitHub\LPOOII-GRUPO17\LPOOII_GRUPO17\ClasesBase\obj\Debug\ClasesBase.pdb

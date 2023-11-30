@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/fondodoc.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("media/intro.mp4")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("media/maru.wav")]
 
 
