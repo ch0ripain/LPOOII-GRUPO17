@@ -284,9 +284,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\gato1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ClasesBase\ClasesBase.csproj">
       <Project>{99FF5872-5DAC-4A87-81DE-C20F6B1A6246}</Project>
       <Name>ClasesBase</Name>
@@ -305,9 +302,6 @@
     <Resource Include="Roles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\_874790fe-cf30-4adf-b8a9-972bd8094108.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Zonas.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -323,16 +317,10 @@
     <Resource Include="Images\logousuario.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\okpng.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Peter_Parking_Grupo_17-transformed.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logoapp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\fondodoc.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\cargando.png" />
