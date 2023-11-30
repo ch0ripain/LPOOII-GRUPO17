@@ -3,11 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ControlesDeUsuario"
              mc:Ignorable="d" Height="117" Width="232">
-    <Grid Height="122" Width="273">
-        <Label Content="Usuario:" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="13,28,0,0" Name="lblUsername" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="75" Background="White" />
-        <Label Content="Contraseña:" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="13,71,0,0" Name="lblPassword" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="75" Background="White" />
-        <TextBox Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="95,28,0,0" Name="txtUsername" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="120" />
-        <PasswordBox Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="95,71,0,0" Name="pswBox" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="120" />
+    <UserControl.Resources>
+        <Style x:Key="EstiloTextBoxLogin" TargetType="TextBox">
+            <!-- Define aquí las propiedades del estilo para TextBox -->
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <!-- Otros setters según tus necesidades -->
+        </Style>
+
+        <Style x:Key="EstiloPasswordBoxLogin" TargetType="PasswordBox">
+            <!-- Define aquí las propiedades del estilo para PasswordBox -->
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <!-- Otros setters según tus necesidades -->
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Height="122" Width="232">
+        <Image Source="/ControlesDeUsuario;component/Images/user.png" Height="30" HorizontalAlignment="Left" Margin="13,28,0,0" VerticalAlignment="Top" Width="30" />
+        <Image Source="/ControlesDeUsuario;component/Images/candadovich.png" Height="30" HorizontalAlignment="Left" Margin="13,71,0,0" VerticalAlignment="Top" Width="30" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="55,28,0,0" Style="{StaticResource EstiloTextBoxLogin}" VerticalAlignment="Top" Width="160" Name="txtUsername" VerticalContentAlignment="Center" />
+        <PasswordBox Height="30" HorizontalAlignment="Left" Margin="55,71,0,0" Style="{StaticResource EstiloPasswordBoxLogin}" VerticalAlignment="Top" Width="160" Name="pswBox" VerticalContentAlignment="Center" />
     </Grid>
 </UserControl>

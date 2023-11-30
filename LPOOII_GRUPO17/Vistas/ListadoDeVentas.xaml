@@ -1,0 +1,54 @@
+﻿<Window x:Class="Vistas.ListadoDeVentas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:coleccionVentas="clr-namespace:ClasesBase;assembly=ClasesBase"
+        xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        Title="PETER PARKING" Height="500" Width="1250" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Icon="/Vistas;component/Images/mascaraspiderman.jpg" AllowsTransparency="False" Visibility="Visible" WindowStyle="SingleBorderWindow" ResizeMode="CanMinimize">
+    <Window.Background>
+        <ImageBrush ImageSource="/Vistas;component/Images/fondodoc.png" Stretch="UniformToFill" TileMode="None" />
+    </Window.Background>
+    <Window.Resources>
+        <ObjectDataProvider
+            x:Key="dsVentas"
+            ObjectType="{x:Type coleccionVentas:TrabajarTicket}"
+            MethodName="TraerVentas">
+        </ObjectDataProvider>
+        <CollectionViewSource
+            x:Key="VentasFiltradas"
+            Source="{StaticResource dsVentas}"
+            Filter="eventVistaFecha_Filter">
+            <CollectionViewSource.SortDescriptions>
+                <componentModel:SortDescription PropertyName="TicketNro" Direction="Ascending"/>
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+    </Window.Resources>
+    <Grid Margin="0">
+        <Label Content="LISTADO DE VENTAS" Style="{StaticResource lblSombra}" FontWeight="Bold" Height="34" HorizontalAlignment="Center" Name="lblTitulo" VerticalAlignment="Top" Width="188" Margin="0,15,0,0" FontSize="18" />
+        <ListView Grid.Row="1" Name="lsvVenta" ItemsSource="{Binding Source={StaticResource VentasFiltradas}}" Margin="10,75,10,45">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="N° Ticket" DisplayMemberBinding="{Binding TicketNro}"/>
+                    <GridViewColumn Header="Fecha de entrada"  DisplayMemberBinding="{Binding FechaHoraEnt}"/>
+                    <GridViewColumn Header="Fecha de salida"  DisplayMemberBinding="{Binding FechaHoraSal}"/>
+                    <GridViewColumn Header="DNI Cliente"  DisplayMemberBinding="{Binding ClienteDNI}"/>
+                    <GridViewColumn Header="AyN" DisplayMemberBinding="{Binding AyN}"/>
+                    <GridViewColumn Header="Telefono" DisplayMemberBinding="{Binding Telefono}"/>
+                    <GridViewColumn Header="TVCodigo" DisplayMemberBinding="{Binding TVCodigo}"/>
+                    <GridViewColumn Header="Tipo Vehiculo" DisplayMemberBinding="{Binding TipoVehiculo}"/>
+                    <GridViewColumn Header="Tarifa" DisplayMemberBinding="{Binding Tarifa}"/>
+                    <GridViewColumn Header="Patente" DisplayMemberBinding="{Binding Patente}"/>
+                    <GridViewColumn Header="Codigo Sector" DisplayMemberBinding="{Binding SectorCodigo}"/>
+                    <GridViewColumn Header="Descripcion" DisplayMemberBinding="{Binding SectorDescripcion}"/>
+                    <GridViewColumn Header="Identificador" DisplayMemberBinding="{Binding SectorIdentificador}"/>
+                    <GridViewColumn Header="Duración" DisplayMemberBinding="{Binding Duracion}"/>
+                    <GridViewColumn Header="Total" DisplayMemberBinding="{Binding Total}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Filtrar por rango de fechas:" Style="{StaticResource lblSombra}" Height="28" HorizontalAlignment="Left" Margin="12,42,0,0" Name="lblFiltroFecha" VerticalAlignment="Top" />
+        <DatePicker Height="25" HorizontalAlignment="Left" Margin="192,45,0,0" Name="dtpInicio" VerticalAlignment="Top" Width="115" SelectedDate="1/1/2023" SelectedDateChanged="dtpRango_SelectedDateChanged" />
+        <DatePicker Height="25" HorizontalAlignment="Left" Margin="313,45,0,0" Name="dtpFinal" VerticalAlignment="Top" Width="115" SelectedDate="12/31/2023" SelectedDateChanged="dtpRango_SelectedDateChanged"/>
+        <Button Content="Vista Previa" Style="{StaticResource EstiloBoton}" Height="24" HorizontalAlignment="Right" Margin="0,49,10,0" Name="btnVistaPrevia" VerticalAlignment="Top" Width="97" Click="btnVistaPrevia_Click" FlowDirection="RightToLeft" />
+        <Label Content="Total: $" Style="{StaticResource lblSombra}" Height="28" HorizontalAlignment="Left" Margin="12,421,0,10" Name="lblTotal" VerticalAlignment="Bottom" FontWeight="Bold" />
+    </Grid>
+</Window>

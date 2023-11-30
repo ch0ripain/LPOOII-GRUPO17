@@ -11,6 +11,7 @@ namespace ClasesBase
         private string descripcion;
         private string identificador;
         private bool habilitado;
+        private DateTime tiempoDisponible;
 
         public bool Habilitado
         {
@@ -35,5 +36,12 @@ namespace ClasesBase
             get { return sectorCodigo; }
             set { sectorCodigo = value; }
         }
+
+        public DateTime TiempoDisponible
+        {
+            get { return tiempoDisponible; }
+            set { tiempoDisponible = value; }
+        }
+
     }
 }

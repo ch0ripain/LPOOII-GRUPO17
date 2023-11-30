@@ -55,8 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ABMClientes.xaml.cs">
+      <DependentUpon>ABMClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ABMTipoVehiculo.xaml.cs">
+      <DependentUpon>ABMTipoVehiculo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ABMUsuarios.xaml.cs">
       <DependentUpon>ABMUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AcercaDe.xaml.cs">
+      <DependentUpon>AcercaDe.xaml</DependentUpon>
     </Compile>
     <Compile Include="AgregarCliente.xaml.cs">
       <DependentUpon>AgregarCliente.xaml</DependentUpon>
@@ -68,17 +77,35 @@
     <Compile Include="EstadoSector.xaml.cs">
       <DependentUpon>EstadoSector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListadoDeClientes.xaml.cs">
+      <DependentUpon>ListadoDeClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoDeSectoresOcupados.xaml.cs">
+      <DependentUpon>ListadoDeSectoresOcupados.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ListadoDeUsuarios.xaml.cs">
       <DependentUpon>ListadoDeUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoDeVentas.xaml.cs">
+      <DependentUpon>ListadoDeVentas.xaml</DependentUpon>
     </Compile>
     <Compile Include="ListarTipoVehiculo.xaml.cs">
       <DependentUpon>ListarTipoVehiculo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PresentacionApp.xaml.cs">
+      <DependentUpon>PresentacionApp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegistrarEntrada.xaml.cs">
       <DependentUpon>RegistrarEntrada.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RegistrarSalida.xaml.cs">
+      <DependentUpon>RegistrarSalida.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ValidarCliente.xaml.cs">
       <DependentUpon>ValidarCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ValidarTV.xaml.cs">
+      <DependentUpon>ValidarTV.xaml</DependentUpon>
     </Compile>
     <Compile Include="VehiculosEnPlaya.xaml.cs">
       <DependentUpon>VehiculosEnPlaya.xaml</DependentUpon>
@@ -86,10 +113,34 @@
     <Compile Include="VistaPreviaDeImpresion.xaml.cs">
       <DependentUpon>VistaPreviaDeImpresion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VistaPreviaDeImpresionClientes.xaml.cs">
+      <DependentUpon>VistaPreviaDeImpresionClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VistaPreviaDeImpresionListadoSectoresOcupados.xaml.cs">
+      <DependentUpon>VistaPreviaDeImpresionListadoSectoresOcupados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VistaPreviaDeImpresionListadoVentas.xaml.cs">
+      <DependentUpon>VistaPreviaDeImpresionListadoVentas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VistaPreviaDeTicket.xaml.cs">
       <DependentUpon>VistaPreviaDeTicket.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VistaPreviaDeTicketSalida.xaml.cs">
+      <DependentUpon>VistaPreviaDeTicketSalida.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ABMClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ABMTipoVehiculo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ABMUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AcercaDe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,7 +160,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ListadoDeClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListadoDeSectoresOcupados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ListadoDeUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListadoDeVentas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,11 +207,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PresentacionApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RegistrarEntrada.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RegistrarSalida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ValidarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ValidarTV.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,7 +235,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="VistaPreviaDeImpresionClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VistaPreviaDeImpresionListadoSectoresOcupados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VistaPreviaDeImpresionListadoVentas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VistaPreviaDeTicket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VistaPreviaDeTicketSalida.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,6 +306,45 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\_874790fe-cf30-4adf-b8a9-972bd8094108.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Zonas.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mascaraspiderman.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\peterparking.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\peterchau.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logousuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\okpng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Peter_Parking_Grupo_17-transformed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logoapp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fondodoc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cargando.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\spiderman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\estacionamiento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\abm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

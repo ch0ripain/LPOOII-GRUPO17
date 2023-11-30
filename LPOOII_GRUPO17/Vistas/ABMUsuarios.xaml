@@ -2,7 +2,10 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:svc="clr-namespace:ClasesBase;assembly=ClasesBase"
-        Title="ABM de Usuarios" Height="425" Width="525" Loaded="Window_Loaded" VerticalAlignment="Top" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen">
+        Title="PETER PARKING - ABM DE USUARIOS" Height="550" Width="525" Loaded="Window_Loaded" VerticalAlignment="Top" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen" Icon="/Vistas;component/Images/mascaraspiderman.jpg" ResizeMode="CanMinimize">
+    <Window.Background>
+        <ImageBrush ImageSource="/Vistas;component/Images/abm.png" Stretch="UniformToFill" TileMode="None" />
+    </Window.Background>
     <Window.Resources>
         <ObjectDataProvider
             x:Key="LIST_USER"
@@ -12,37 +15,37 @@
         <XmlDataProvider x:Key="Roles" Source="Roles.xml" XPath="/roles"/>
     </Window.Resources>
     <Canvas Name="canvas_content" DataContext="{Binding Source={StaticResource ResourceKey=LIST_USER}}" Width="480">
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <Button Style="{StaticResource EstiloBoton}" Content="Nuevo" Height="23" HorizontalAlignment="Left" Margin="0,0,0,0" Name="btnNuevoUsuario" VerticalAlignment="Top" Click="btnNuevoUsuario_Click" />
-                <Button Style="{StaticResource EstiloBoton}" Content="Eliminar" Height="23" HorizontalAlignment="Left" Margin="0,0,0,0" Name="btnEliminarUsuario" VerticalAlignment="Top" Click="btnEliminarUsuario_Click" />
-                <Button Style="{StaticResource EstiloBoton}" Content="Cancelar" Height="23" HorizontalAlignment="Left" Margin="0,0,0,0" Name="btnCancelar" VerticalAlignment="Top" Click="btnCancelar_Click" />
-                <Button Style="{StaticResource EstiloBoton}" Content="Guardar" Height="23" HorizontalAlignment="Right" Margin="0,0,0,0" Name="btnGuardar" VerticalAlignment="Top" Click="btnGuardar_Click" />
+                <Button Style="{StaticResource BotonNeonStyle}" Content="Nuevo" Height="23" HorizontalAlignment="Left" Margin="0,0,0,0" Name="btnNuevoUsuario" VerticalAlignment="Top" Click="btnNuevoUsuario_Click" />
+                <Button Style="{StaticResource BotonNeonRojoStyle}" Content="Eliminar" Height="23" HorizontalAlignment="Left" Margin="0,0,0,0" Name="btnEliminarUsuario" VerticalAlignment="Top" Click="btnEliminarUsuario_Click" />
+                <Button Style="{StaticResource BotonNeonAmarilloStyle}" Content="Cancelar" Height="23" HorizontalAlignment="Left" Margin="0,0,0,0" Name="btnCancelar" VerticalAlignment="Top" Click="btnCancelar_Click" />
+                <Button Style="{StaticResource BotonNeonAzulStyle}" Content="Guardar" Height="23" HorizontalAlignment="Right" Margin="0,0,0,0" Name="btnGuardar" VerticalAlignment="Top" Click="btnGuardar_Click" />
             </StackPanel>
                 <DockPanel Width="400" VerticalAlignment="Top">
                     <DockPanel DockPanel.Dock="Left" Width="200">
                         <StackPanel Orientation="Vertical">
-                        <Label Content="Gestionar Usuario" Height="24" HorizontalContentAlignment="Center" Name="lblGestionDatosUsuario" Padding="0" VerticalContentAlignment="Center" Margin="0,15,0,10" />
-                        <Label Content="Nombre de Usuario" Height="24" Name="lblUserName" HorizontalAlignment="Center" />
-                        <TextBox Height="24" Name="txtNewUserName" VerticalContentAlignment="Center" Width="160" />
-                        <Label Content="Contraseña" Height="24" Name="lblPassword" HorizontalAlignment="Center" VerticalContentAlignment="Center" />
-                        <TextBox Height="24" Name="txtNewPassword" VerticalContentAlignment="Center" Width="160" />
-                        <Label Content="Apellido" Height="24" Name="lblApellido" HorizontalAlignment="Center" VerticalContentAlignment="Center" />
-                        <TextBox Height="24" Name="txtNewApellido" VerticalContentAlignment="Center" Width="160" />
-                        <Label Content="Nombre" Height="24" Name="lblNombre" HorizontalAlignment="Center" VerticalContentAlignment="Center" />
-                        <TextBox Height="24" Name="txtNewNombre" VerticalContentAlignment="Center" Width="160" />
-                        <Label Content="Rol" Height="24" Name="lblRol" HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0" />
+                        <Label Style="{StaticResource lblSombra}" Content="REFERENCIA" Height="24" HorizontalContentAlignment="Center" Name="lblGestionDatosUsuario" Padding="0" VerticalContentAlignment="Center" Margin="0,15,0,10" />
+                        <Label Style="{StaticResource lblSombra}" Content="Nombre de Usuario" Height="30" Name="lblUserName" HorizontalAlignment="Center" />
+                        <TextBox Style="{StaticResource txtRedondeado}" Height="24" Name="txtNewUserName" VerticalContentAlignment="Center" Width="160" HorizontalAlignment="Center" HorizontalContentAlignment="Center" />
+                        <Label Style="{StaticResource lblSombra}" Content="Contraseña" Height="30" Name="lblPassword" HorizontalAlignment="Center" VerticalContentAlignment="Center" />
+                        <TextBox Style="{StaticResource txtRedondeado}" Height="24" Name="txtNewPassword" VerticalContentAlignment="Center" Width="160" HorizontalAlignment="Center" HorizontalContentAlignment="Center" />
+                        <Label Style="{StaticResource lblSombra}" Content="Apellido" Height="30" Name="lblApellido" HorizontalAlignment="Center" VerticalContentAlignment="Center" />
+                        <TextBox Style="{StaticResource txtRedondeado}" Height="24" Name="txtNewApellido" VerticalContentAlignment="Center" Width="160" HorizontalAlignment="Center" HorizontalContentAlignment="Center" />
+                        <Label Style="{StaticResource lblSombra}" Content="Nombre" Height="30" Name="lblNombre" HorizontalAlignment="Center" VerticalContentAlignment="Center" />
+                        <TextBox Style="{StaticResource txtRedondeado}" Height="24" Name="txtNewNombre" VerticalContentAlignment="Center" Width="160" HorizontalContentAlignment="Center" HorizontalAlignment="Center" />
+                        <Label Style="{StaticResource lblSombra}" Content="Rol" Height="30" Name="lblRol" HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0" />
                         <ComboBox ItemsSource="{Binding Source={StaticResource Roles},XPath=rol/@name}" SelectedIndex="0" Height="23" Width="160" Name="cmbNewRol" Margin="0,0,0,25" />
                     </StackPanel>
                     </DockPanel>
                     <DockPanel DockPanel.Dock="Right" Width="200">
                         <StackPanel Name="stpDatosUsuario" Orientation="Vertical">
-                        <Label Content="Datos del Usuario" Height="24" Name="lblDatosDelUsuario" Padding="0" Margin="0,15,0,10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                        <TextBox Text="{Binding UserName}" Width="160" Height="24" Margin="0" VerticalContentAlignment="Center" Name="txtUserName" IsReadOnly="True"></TextBox>
-                        <TextBox Text="{Binding Password}" Width="160" Height="24" VerticalContentAlignment="Center" Name="txtPassword" IsReadOnly="True"></TextBox>
-                        <TextBox Text="{Binding Apellido}" Width="160" Height="24" VerticalContentAlignment="Center" Name="txtApellido" IsReadOnly="True"></TextBox>
-                        <TextBox Text="{Binding Nombre}" Width="160" Height="24" VerticalContentAlignment="Center" Name="txtNombre" IsReadOnly="True"></TextBox>
-                        <ComboBox Height="23" ItemsSource="{Binding Source={StaticResource Roles},XPath=rol/@name}" x:Name="cmbRol" Width="160" SelectedValue="{Binding Rol}" Margin="0" IsReadOnly="True" />
+                        <Label Style="{StaticResource lblSombra}" Content="DATOS" Height="24" Name="lblDatosDelUsuario" Padding="0" Margin="0,15,0,20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                        <TextBox Style="{StaticResource txtRedondeado}" Text="{Binding UserName}" Width="160" Height="24" Margin="0,0,0,15" VerticalContentAlignment="Center" Name="txtUserName" IsReadOnly="True" HorizontalAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+                        <TextBox Style="{StaticResource txtRedondeado}" Text="{Binding Password}" Width="160" Height="24" VerticalContentAlignment="Center" Name="txtPassword" IsReadOnly="True" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,14"></TextBox>
+                        <TextBox Style="{StaticResource txtRedondeado}" Text="{Binding Apellido}" Width="160" Height="24" VerticalContentAlignment="Center" Name="txtApellido" IsReadOnly="True" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,0,15"></TextBox>
+                        <TextBox Style="{StaticResource txtRedondeado}" Text="{Binding Nombre}" Width="160" Height="24" VerticalContentAlignment="Center" Name="txtNombre" IsReadOnly="True" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,14"></TextBox>
+                        <ComboBox Height="23" ItemsSource="{Binding Source={StaticResource Roles},XPath=rol/@name}" x:Name="cmbRol" Width="160" SelectedValue="{Binding Rol}" Margin="0,0,0,14" IsReadOnly="True" />
                         <Button Content="Modificar" Height="23" Name="btnModificar" Style="{StaticResource EstiloBoton}" Width="160" Click="btnModificar_Click" Margin="0,10,0,25" />
                     </StackPanel>
                     </DockPanel>

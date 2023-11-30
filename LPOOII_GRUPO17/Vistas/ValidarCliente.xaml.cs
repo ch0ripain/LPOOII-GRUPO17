@@ -19,6 +19,7 @@ namespace Vistas
     /// </summary>
     public partial class ValidarCliente : Window
     {
+        public bool clienteModificado { get; set; }
         public ValidarCliente()
         {
             InitializeComponent();
@@ -30,11 +31,17 @@ namespace Vistas
             if (int.TryParse(txtClienteDNI.Text, out dni))
             {
                 var dataCliente = this.FindResource("DATA_CLIENTE") as ObjectDataProvider;
-                 if (dataCliente != null)
-                 {
+                if (dataCliente != null)
+                {
                     dataCliente.MethodParameters[0] = dni;
-                 }
+                    btnModificarCliente.IsEnabled = true;
+                }
+                else
+                {
+                    btnModificarCliente.IsEnabled = false;
+                }
             }
+            
         }
 
         private void btnModificarCliente_Click(object sender, RoutedEventArgs e)
@@ -53,11 +60,42 @@ namespace Vistas
 
                 MessageBoxResult result = MessageBox.Show("Desea modificar este cliente?\nDNI: " + oCliente.ClienteDNI + "\nNombre: " + oCliente.Nombre + "\nApellido: " + oCliente.Apellido + "\nTeléfono: " + oCliente.Telefono, "Confirmar", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
+                this.clienteModificado = false;
+
                 if (result == MessageBoxResult.Yes)
                 {
-                    MessageBox.Show("Cliente modificado!");
+                    TrabajarClientes.ModificarCliente(oCliente);
+                    this.clienteModificado = true;
+                    MessageBox.Show("Cliente modificado!", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Close();
                 }
             }
         }
+
+        private void txtClienteDNI_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            // Verificar si el caracter ingresado no es un número
+            if (!char.IsDigit(e.Text, 0))
+            {
+                // Cancelar el evento si no es un número
+                e.Handled = true;
+            }
+        }
+
+        private void txtClienteTelefono_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            // Verificar si el caracter ingresado no es un número
+            if (!char.IsDigit(e.Text, 0))
+            {
+                // Cancelar el evento si no es un número
+                e.Handled = true;
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            btnModificarCliente.IsEnabled = false;
+        }
+
     }
 }

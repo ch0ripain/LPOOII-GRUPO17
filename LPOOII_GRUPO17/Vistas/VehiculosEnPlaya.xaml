@@ -1,30 +1,70 @@
 ﻿<Window x:Class="Vistas.VehiculosEnPlaya"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="VehiculosEnPlaya" Height="480" Width="480" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
-    <Grid Name="grid1">
-        <DockPanel Name="dockPanel1" VerticalAlignment="Stretch" Margin="0,0,0,154">
-            <StackPanel HorizontalAlignment="Stretch" Name="stackPanel1" VerticalAlignment="Top" Width="150">
-                <Button Background="LawnGreen" Content="E1" Height="50" Margin="5,5,5,0" Name="btn1" Click="btnSector_Click"/>
-                <Button Background="LawnGreen" Content="E2" Height="50" Margin="5,5,5,0" Name="btn2" Click="btnSector_Click"/>
-                <Button Background="LawnGreen" Content="E3" Height="50" Margin="5,5,5,0" Name="btn3" Click="btnSector_Click"/>
-                <Button Content="E4" Height="50" Margin="5,5,5,0" Name="btn4" Click="btnSector_Click" Background="DarkGray" />
-                <Button Background="LawnGreen" Content="E5" Height="50" Margin="5,5,5,5" Name="btn5" Click="btnSector_Click"/>
+        xmlns:cvs="clr-namespace:Vistas"
+        Title="PETER PARKING - Vehiculos en playa" Height="525" Width="480" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Icon="/Vistas;component/Images/mascaraspiderman.jpg" ResizeMode="CanMinimize">
+    <Window.Background>
+        <ImageBrush ImageSource="/Vistas;component/Images/estacionamiento.png" />
+    </Window.Background>
+    <Window.Resources>
+        <XmlDataProvider x:Key="Zonas" Source="Zonas.xml" XPath="/zonas"/>
+    </Window.Resources>
+    <Grid Name="grid1" Height="547" VerticalAlignment="Top" Width="461">
+        <DockPanel Name="dcpZona1" VerticalAlignment="Stretch" Margin="60,60,60,207">
+            <StackPanel HorizontalAlignment="Stretch" Name="stp1Z1" VerticalAlignment="Top" Width="100">
+                <Button Background="LawnGreen" Content="E1" Height="50" Margin="5,5,5,0" Name="btn1" Click="btnSector_Click" Tag="1" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E2" Height="50" Margin="5,5,5,0" Name="btn2" Click="btnSector_Click" Tag="2" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E3" Height="50" Margin="5,5,5,0" Name="btn3" Click="btnSector_Click" Tag="3" MouseEnter="btnSector_MouseEnter"/>
+                <Button Content="E4" Height="50" Margin="5,5,5,0" Name="btn4" Click="btnSector_Click" Background="DarkGray" Tag="4" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E5" Height="50" Margin="5,5,5,5" Name="btn5" Click="btnSector_Click" Tag="5" MouseEnter="btnSector_MouseEnter"/>
             </StackPanel>
-            <StackPanel DockPanel.Dock="Right" FlowDirection="LeftToRight" HorizontalAlignment="Right" Name="stackPanel2" VerticalAlignment="Top" Width="150">
-                <Button Background="LawnGreen" Content="E6" Height="50" Margin="5,5,5,0" Name="btn6" Click="btnSector_Click"/>
-                <Button Content="E7" Height="50" Margin="5,5,5,0" Name="btn7" Click="btnSector_Click" Background="DarkGray" />
-                <Button Background="LawnGreen" Content="E8" Height="50" Margin="5,5,5,0" Name="btn8" Click="btnSector_Click"/>
-                <Button Background="LawnGreen" Content="E9" Height="50" Margin="5,5,5,0" Name="btn9" Click="btnSector_Click"/>
-                <Button Background="LawnGreen" Content="E10" Height="50" Margin="5,5,5,5" Name="btn10" Click="btnSector_Click"/>
+            <StackPanel DockPanel.Dock="Right" FlowDirection="LeftToRight" HorizontalAlignment="Right" Name="stp2Z1" VerticalAlignment="Top" Width="100">
+                <Button Background="DarkGray" Content="E6" Height="50" Margin="5,5,5,0" Name="btn6" Click="btnSector_Click" Tag="6" MouseEnter="btnSector_MouseEnter"/>
+                <Button Content="E7" Height="50" Margin="5,5,5,0" Name="btn7" Click="btnSector_Click" Background="LawnGreen" Tag="7" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E8" Height="50" Margin="5,5,5,0" Name="btn8" Click="btnSector_Click" Tag="8" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E9" Height="50" Margin="5,5,5,0" Name="btn9" Click="btnSector_Click" Tag="9" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E10" Height="50" Margin="5,5,5,5" Name="btn10" Click="btnSector_Click" Tag="10" MouseEnter="btnSector_MouseEnter"/>
             </StackPanel>
         </DockPanel>
-        <Label Content="Ocupado:" Height="28" HorizontalAlignment="Left" Margin="49,310,0,0" Name="lblOcupado" VerticalAlignment="Top" />
-        <Label Content="Disponible:" Height="28" HorizontalAlignment="Left" Margin="41,344,0,0" Name="lblDisponible" VerticalAlignment="Top" />
-        <Label Content="Deshabilitado:" Height="28" HorizontalAlignment="Left" Margin="25,378,0,0" Name="lblDeshabilitado" VerticalAlignment="Top" />
-        <Rectangle Height="25" HorizontalAlignment="Left" Margin="120,310,0,0" Name="rctOcupado" Stroke="Black" VerticalAlignment="Top" Width="25" Fill="Red" />
-        <Rectangle Height="25" HorizontalAlignment="Left" Margin="120,344,0,0" Name="rctDisponible" Stroke="Black" VerticalAlignment="Top" Width="25" Fill="LawnGreen" />
-        <Rectangle Height="25" HorizontalAlignment="Left" Margin="120,378,0,0" Name="rctDeshabilitado" Stroke="Black" VerticalAlignment="Top" Width="25" Fill="#FFDDDDDD" />
-        <Button Content="Salir" Height="23" HorizontalAlignment="Left" Margin="371,383,0,0" Name="btnSalir" VerticalAlignment="Top" Width="75" Click="btnSalir_Click" />
+        <DockPanel Name="dcpZona2" VerticalAlignment="Stretch" Margin="60,60,60,207">
+            <StackPanel HorizontalAlignment="Stretch" Name="stp1Z2" VerticalAlignment="Top" Width="100">
+                <Button Background="LawnGreen" Content="E1" Height="50" Margin="5,5,5,0" Name="btnS1Z2" Click="btnSector_Click" Tag="11" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="DarkGray" Content="E2" Height="50" Margin="5,5,5,0" Name="btnS2Z2" Click="btnSector_Click" Tag="12" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E3" Height="50" Margin="5,5,5,0" Name="btnS3Z2" Click="btnSector_Click" Tag="13" MouseEnter="btnSector_MouseEnter"/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right" FlowDirection="LeftToRight" HorizontalAlignment="Center" Name="stp3Z2" VerticalAlignment="Top" Width="100">
+                <Button Background="DarkGray" Content="E7" Height="50" Margin="5,5,5,0" Name="btnS7Z2" Click="btnSector_Click" Tag="17" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E8" Height="50" Margin="5,5,5,0" Name="btnS8Z2" Click="btnSector_Click" Tag="18" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E9" Height="50" Margin="5,5,5,0" Name="btnS9Z2" Click="btnSector_Click" Tag="19" MouseEnter="btnSector_MouseEnter"/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right" FlowDirection="LeftToRight" HorizontalAlignment="Center" Name="stp2Z2" VerticalAlignment="Top" Width="100">
+                <Button Background="LawnGreen" Content="E4" Height="50" Margin="5,5,5,0" Name="btnS4Z2" Click="btnSector_Click" Tag="14" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E5" Height="50" Margin="5,5,5,0" Name="btnS5Z2" Click="btnSector_Click" Tag="15" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E6" Height="50" Margin="5,5,5,0" Name="btnS6Z2" Click="btnSector_Click" Tag="16" MouseEnter="btnSector_MouseEnter"/>
+            </StackPanel>
+        </DockPanel>
+        <DockPanel Name="dcpZona3" VerticalAlignment="Stretch" Margin="60,60,60,207">
+            <StackPanel HorizontalAlignment="Stretch" Name="stp1Z3" VerticalAlignment="Top" Width="100">
+                <Button Background="LawnGreen" Content="E1" Height="50" Margin="5,5,5,0" Name="btnS1Z3" Click="btnSector_Click" Tag="20" MouseEnter="btnSector_MouseEnter" />
+                <Button Background="LawnGreen" Content="E2" Height="50" Margin="5,5,5,0" Name="btnS2Z3" Click="btnSector_Click" Tag="21" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E3" Height="50" Margin="5,5,5,0" Name="btnS3Z3" Click="btnSector_Click" Tag="22" MouseEnter="btnSector_MouseEnter"/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right" FlowDirection="LeftToRight" HorizontalAlignment="Right" Name="stp2Z3" VerticalAlignment="Top" Width="100">
+                <Button Background="DarkGray" Content="E4" Height="50" Margin="5,5,5,0" Name="btnS4Z3" Click="btnSector_Click" Tag="23" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E5" Height="50" Margin="5,5,5,0" Name="btnS5Z3" Click="btnSector_Click" Tag="24" MouseEnter="btnSector_MouseEnter"/>
+                <Button Background="LawnGreen" Content="E6" Height="50" Margin="5,5,5,0" Name="btnS6Z3" Click="btnSector_Click" Tag="25" MouseEnter="btnSector_MouseEnter"/>
+            </StackPanel>
+        </DockPanel>
+        <Label Content="Por favor, seleccione una zona: " Style="{StaticResource lblSombra}" Height="37" HorizontalAlignment="Left" Margin="78,12,0,0" Name="lblZona" VerticalAlignment="Top" FontSize="18" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="338,19,0,0" Name="cmbZona" VerticalAlignment="Top" Width="37" ItemsSource="{Binding Source={StaticResource Zonas},XPath=zona/@name}" SelectedIndex="0" SelectionChanged="cmbZona_SelectionChanged" />
+        <Label Content="Ocupado:" Style="{StaticResource lblSombra}" Height="28" Name="lblOcupado" Margin="60,359,303,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" />
+        <Label Content="Disponible:" Style="{StaticResource lblSombra}" Height="28" Name="lblDisponible" Margin="65,393,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Width="90" />
+        <Label Content="Deshabilitado:" Style="{StaticResource lblSombra}" Height="28" Name="lblDeshabilitado" Margin="60,427,303,92" HorizontalContentAlignment="Right" />
+        <Rectangle Height="25" Name="rctOcupado" Stroke="Black" Width="25" Fill="Red" Margin="166,362,267,0" VerticalAlignment="Top" />
+        <Rectangle Height="25" Name="rctDisponible" Stroke="Black" Width="25" Fill="LawnGreen" Margin="166,396,267,126" />
+        <Rectangle Height="25" Name="rctDeshabilitado" Stroke="Black" Width="25" Fill="#FFDDDDDD" Margin="166,430,267,92" />
+        <Button Content="Salir" Height="23" Name="btnSalir" Style="{StaticResource BotonNeonRojoStyle}" Width="75" Click="btnSalir_Click" Margin="321,430,0,94" HorizontalAlignment="Left" />
+        <Button Content="Listar ventas" Style="{StaticResource BotonNeonVerdeStyle}" Height="23" HorizontalAlignment="Left" Margin="266,396,0,0" Name="btnListarVentas" VerticalAlignment="Top" Width="130" Click="btnListarVentas_Click" />
+        <Button Content="Listar sectores ocupados" Height="23" Name="btnVerSO" Style="{StaticResource BotonNeonMoradoStyle}" Margin="226,362,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="170" Click="btnVerSO_Click" />
     </Grid>
 </Window>

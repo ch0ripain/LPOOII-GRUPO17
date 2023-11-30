@@ -1,0 +1,30 @@
+﻿<Window x:Class="Vistas.VistaPreviaDeTicketSalida"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Salida de Ticket" Height="460" Width="320" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Icon="/Vistas;component/Images/mascaraspiderman.jpg">
+    <FixedDocument>
+        <PageContent>
+            <FixedPage>
+                <Grid Height="346">
+                    <TextBlock Height="23" FontWeight="Bold" HorizontalAlignment="Center" Name="txbTitulo" Text="PETER PARKING" VerticalAlignment="Top" Margin="81,12,78,0" Width="119" FontSize="14" FontFamily="Arial" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="44,32,0,0" Name="txbDireccion" Text="Indepedencia 546 - San Salvador de Jujuy " VerticalAlignment="Top" FontSize="10" FontFamily="Arial" />
+                    <Rectangle Fill="Black" Height="3" Margin="0,49,0,0" VerticalAlignment="Top" />
+                    <TextBlock Height="23" HorizontalAlignment="Center" Margin="100,58,102,0" Name="txbNroTicket" Text="Ticket #" VerticalAlignment="Top" FontFamily="Arial" Width="76" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,81,0,0" Name="txbFechaEnt" Text="Fecha de entrada: " VerticalAlignment="Top" FontFamily="Arial" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,110,0,0" Name="txbFechaSal" Text="Fecha de salida: " VerticalAlignment="Top" FontFamily="Arial" />
+                    <!--<TextBlock Height="23" HorizontalAlignment="Left" Margin="12,112,0,0" Name="txbFechaSal" Text="Fecha de Salida: " VerticalAlignment="Top" FontFamily="Arial" />-->
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,139,0,0" Name="txbCliente" Text="Cliente: " VerticalAlignment="Top" FontFamily="Arial" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,168,0,0" Name="txbTVDescripcion" Text="Tipo de vehículo: " VerticalAlignment="Top" FontFamily="Arial" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,197,0,0" Name="txbPatente" Text="Patente: " VerticalAlignment="Top" FontFamily="Arial" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,226,0,0" Name="txbSectorDescripcion" Text="Lugar: " VerticalAlignment="Top" FontFamily="Arial" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,255,0,0" Name="txbDuracion" Text="Duración: " VerticalAlignment="Top" FontFamily="Arial" />
+        <!--<TextBlock Height="23" HorizontalAlignment="Left" Margin="12,257,0,0" Name="txbDuracion" Text="Duración: " VerticalAlignment="Top" FontFamily="Arial" />-->
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,284,0,0" Name="txbTarifa" Text="Tarifa: " VerticalAlignment="Top" FontFamily="Arial" />
+                    <TextBlock FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="160,284,0,0" Name="txbTotal" Text="TOTAL: " VerticalAlignment="Top" FontFamily="Arial" />
+                    <Rectangle Fill="Black" Height="3" Margin="0,304,0,0" VerticalAlignment="Top" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,318,0,0" Name="txbUsuario" Text="Empleado: " VerticalAlignment="Top" FontFamily="Arial" />
+                </Grid>
+            </FixedPage>
+        </PageContent>
+    </FixedDocument>
+</Window>

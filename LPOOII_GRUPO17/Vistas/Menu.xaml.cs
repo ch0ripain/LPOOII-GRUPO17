@@ -19,7 +19,7 @@ namespace Vistas
     /// </summary>
     public partial class Menu : Window
     {
-        private Usuario usuarioLogueado;
+        private static Usuario usuarioLogueado;
         public Menu(Usuario usuarioLog)
         {
             InitializeComponent();
@@ -31,6 +31,9 @@ namespace Vistas
             {
                 menuItemClientes.Visibility = Visibility.Collapsed;
                 menuItemEstacionamiento.Visibility = Visibility.Collapsed;
+                lblUsuario.Content = usuarioLogueado.Nombre + " " + usuarioLogueado.Apellido;
+                lblRol.Content = usuarioLogueado.Rol;
+                wdwMenu.Title += " ADMIN";
             }
             else
             {
@@ -38,8 +41,17 @@ namespace Vistas
                 {
                     menuItemSectores.Visibility = Visibility.Collapsed;
                     menuItemTipoVehiculo.Visibility = Visibility.Collapsed;
+                    menuItemUsuario.Visibility = Visibility.Collapsed;
+                    lblUsuario.Content = usuarioLogueado.Nombre + " " + usuarioLogueado.Apellido;
+                    lblRol.Content = usuarioLogueado.Rol;
+                    wdwMenu.Title += " OPERADOR";
                 }
             }
+        }
+
+        public static Usuario ObtenerUsuarioLogueado()
+        {
+            return usuarioLogueado;
         }
 
         private void Menu_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -79,10 +91,80 @@ namespace Vistas
 
         private void menuItemRegistrarEntrada_Click(object sender, RoutedEventArgs e)
         {
-            RegistrarEntrada oRegistrarEntrada = new RegistrarEntrada(usuarioLogueado);
-            oRegistrarEntrada.Show();
+            VehiculosEnPlaya oVehiculosEnPlaya = new VehiculosEnPlaya();
+            oVehiculosEnPlaya.Show();
         }
 
+        private void menuItemVerSectores_Click(object sender, RoutedEventArgs e)
+        {
+            VehiculosEnPlaya oVehiculosEnPlaya = new VehiculosEnPlaya();
+            oVehiculosEnPlaya.Show();
+        }
 
+        private void menuItemRegistrarSalida_Click(object sender, RoutedEventArgs e)
+        {
+            VehiculosEnPlaya oVehiculosEnPlaya = new VehiculosEnPlaya();
+            oVehiculosEnPlaya.Show();
+        }
+
+        private void menuItemTipoVehiculoGestionar_Click(object sender, RoutedEventArgs e)
+        {
+            ABMTipoVehiculo oABMTV = new ABMTipoVehiculo();
+            oABMTV.Show();
+        }
+
+        private void menuItemUsuario_Listar_Click(object sender, RoutedEventArgs e)
+        {
+            ListadoDeUsuarios oListadoDeUsuarios = new ListadoDeUsuarios();
+            oListadoDeUsuarios.Show();
+        }
+
+        private void menuItemUsuario_Gestionar_Click(object sender, RoutedEventArgs e)
+        {
+            ABMUsuarios oABMUsuarios = new ABMUsuarios();
+            oABMUsuarios.Show();
+        }
+
+        private void menuItemEstacionamiento_Click(object sender, RoutedEventArgs e)
+        {
+            VehiculosEnPlaya oVehiculosEnPlaya = new VehiculosEnPlaya();
+            oVehiculosEnPlaya.Show();
+        }
+
+        private void menuItemClienteGestionar_Click(object sender, RoutedEventArgs e)
+        {
+            ABMClientes oABM = new ABMClientes();
+            oABM.Show();
+        }
+
+        private void VerSectoresOcupados_Click(object sender, RoutedEventArgs e)
+        {
+            ListadoDeSectoresOcupados oListado = new ListadoDeSectoresOcupados();
+            oListado.Show();
+        }
+
+        private void menuItemAcercaDe_Click(object sender, RoutedEventArgs e)
+        {
+            AcercaDe oAcercaDe = new AcercaDe();
+            oAcercaDe.Show();
+        }
+
+        private void menuItemClientes_Click(object sender, RoutedEventArgs e)
+        {
+            ABMClientes oABMClientes = new ABMClientes();
+            oABMClientes.Show();
+        }
+
+        private void menuItemEstacionamiento_Gestionar_Click(object sender, RoutedEventArgs e)
+        {
+            VehiculosEnPlaya oVehiculosEnPlaya = new VehiculosEnPlaya();
+            oVehiculosEnPlaya.Show();
+        }
+
+        private void menuItemEstacionamiento_VerSectoresOcupados_Click(object sender, RoutedEventArgs e)
+        {
+            ListadoDeSectoresOcupados oListado = new ListadoDeSectoresOcupados();
+            oListado.Show();
+        }
     }
 }

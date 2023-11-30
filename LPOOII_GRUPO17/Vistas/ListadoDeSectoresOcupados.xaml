@@ -1,0 +1,41 @@
+﻿<Window x:Class="Vistas.ListadoDeSectoresOcupados"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:coleccionSectores="clr-namespace:ClasesBase;assembly=ClasesBase"
+        xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        Title="PETER PARKING" Height="500" Width="750" WindowStartupLocation="CenterScreen" Icon="/Vistas;component/Images/mascaraspiderman.jpg" AllowsTransparency="False" Visibility="Visible" WindowStyle="SingleBorderWindow" ResizeMode="CanMinimize">
+    <Window.Background>
+        <ImageBrush ImageSource="/Vistas;component/Images/fondodoc.png" Stretch="UniformToFill" TileMode="None" />
+    </Window.Background>
+    <Window.Resources>
+        <ObjectDataProvider
+            x:Key="dsSectores"
+            ObjectType="{x:Type coleccionSectores:TrabajarSector}"
+            MethodName="TraerSectoresOcupados">
+        </ObjectDataProvider>
+        <CollectionViewSource
+            x:Key="SectoresOcupados"
+            Source="{StaticResource dsSectores}">
+            <CollectionViewSource.SortDescriptions>
+                <componentModel:SortDescription PropertyName="Identificador" Direction="Ascending"/>
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+    </Window.Resources>
+    <Grid>
+        <Label Content="LISTADO DE SECTORES OCUPADOS" Height="31" HorizontalAlignment="Center" Margin="0,12,0,0" Name="lblTitulo" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" FontSize="18" />
+        <ListView Grid.Row="1" Name="lsvSector" ItemsSource="{Binding Source={StaticResource SectoresOcupados}}" Margin="10,60,10,10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Zona" Width="50" DisplayMemberBinding="{Binding Identificador}"/>
+                    <GridViewColumn Header="Sector" Width="65" DisplayMemberBinding="{Binding Descripcion}"/>
+                    <GridViewColumn Header="Fecha de entrada" Width="145" DisplayMemberBinding="{Binding TiempoDisponible}"/>
+                    <GridViewColumn Header="Cliente" Width="140" DisplayMemberBinding="{Binding AyN}"/>
+                    <GridViewColumn Header="Tipo de vehiculo" Width="100" DisplayMemberBinding="{Binding Vehiculo}"/>
+                    <GridViewColumn Header="Patente" Width="65" DisplayMemberBinding="{Binding Patente}"/>
+                    <GridViewColumn Header="Tiempo transcurrido" Width="150" DisplayMemberBinding="{Binding Duracion}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Vista Previa" Style="{StaticResource EstiloBoton}" Height="24" HorizontalAlignment="Right" Margin="0,29,10,0" Name="btnVistaPrevia" VerticalAlignment="Top" Width="97" Click="btnVistaPrevia_Click" FlowDirection="RightToLeft" />
+    </Grid>
+</Window>

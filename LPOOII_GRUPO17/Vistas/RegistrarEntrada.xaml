@@ -3,26 +3,27 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:svc="clr-namespace:ClasesBase;assembly=ClasesBase"
         xmlns:vistas="clr-namespace:Vistas"
-        Title="Registrar Entrada" Height="435" Width="300" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+        Title="PETER PARKING" Height="500" Width="320" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Icon="/Vistas;component/Images/mascaraspiderman.jpg" ResizeMode="CanMinimize">
+    <Window.Background>
+        <ImageBrush ImageSource="/Vistas;component/Images/fondodoc.png" Stretch="UniformToFill" TileMode="None" />
+    </Window.Background>
     <Window.Resources>
         <XmlDataProvider x:Key="Tiempos" Source="Tiempos.xml" XPath="/tiempos"/>
     </Window.Resources>
-    <Grid>
-        <StackPanel Orientation="Vertical">
-            <Label Content="DATOS DEL TICKET" Height="28" Name="lblTicket" HorizontalAlignment="Center" />
-            <Label Content="DNI del Cliente" Height="28" Name="lblClienteDNI" HorizontalAlignment="Center" />
-            <TextBox Height="23" Name="txtClienteDNI" Width="160" />
-            <Label Content="Tipo de Vehículo" Height="28" Name="lblTVCodigo" HorizontalAlignment="Center" />
-            <ComboBox Name="cmbTVCodigo" Width="160" SelectionChanged="cmbTVCodigo_SelectionChanged" />
-            <Label Content="Patente" Height="28" Name="lblPatente" HorizontalAlignment="Center" />
-            <TextBox Height="23" Name="txtPatente" Width="160" />
-            <Label Content="Sector" Height="28" Name="lblSectorCodigo" HorizontalAlignment="Center" />
-            <ComboBox Name="cmbSectorCodigo" Width="160" />
-            <Label Content="Tarifa" Height="28" Name="lblTarifa" HorizontalAlignment="Center" />
-            <TextBox Height="23" Name="txtTarifa" Width="160" IsReadOnly="True" />
-            <Label Content="Duración" Height="28" Name="lblDuracion" HorizontalAlignment="Center" />
-            <ComboBox ItemsSource="{Binding Source={StaticResource Tiempos},XPath=tiempo/@name}" SelectedIndex="3" Width="160" Name="cmbDuracion"></ComboBox>
-            <Button Content="Registrar" Height="23" Name="btnRegistrarEntrada" Width="160" Margin="0,25" Click="btnRegistrarEntrada_Click" />
+    <Grid Height="460">
+        <StackPanel Orientation="Vertical" Height="430" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Label Content="ENTRADA DE TICKET" Style="{StaticResource lblSombra}" Height="36" Name="lblTicket" FontSize="18" Margin="0,10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Style="{StaticResource lblSombra}" Content="DNI del cliente" Height="28" Name="lblClienteDNI" HorizontalAlignment="Center" />
+            <TextBox Height="23" Name="txtClienteDNI" Width="200" TextChanged="txtClienteDNI_TextChanged" PreviewTextInput="txtClienteDNI_PreviewTextInput" Style="{StaticResource txtRedondeado}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Label Style="{StaticResource lblSombra}" Content="Tipo de vehículo" Height="28" Name="lblTVCodigo" HorizontalAlignment="Center" />
+            <ComboBox Name="cmbTVCodigo" Width="200" SelectionChanged="cmbTVCodigo_SelectionChanged" Background="White" BorderBrush="#FFA77DE8" />
+            <Label Style="{StaticResource lblSombra}" Content="Patente" Height="28" Name="lblPatente" HorizontalAlignment="Center" />
+            <TextBox Height="23" Name="txtPatente" Width="200" Style="{StaticResource txtRedondeado}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Label Style="{StaticResource lblSombra}" Content="Sector" Height="28" Name="lblSectorCodigo" HorizontalAlignment="Center" />
+            <TextBox Height="23" Name="txtSector" Width="200" IsReadOnly="True" Style="{StaticResource txtRedondeado}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Label Style="{StaticResource lblSombra}" Content="Tarifa" Height="28" Name="lblTarifa" HorizontalAlignment="Center" />
+            <TextBox Height="23" Name="txtTarifa" Width="200" IsReadOnly="True" Style="{StaticResource txtRedondeado}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Button Style="{StaticResource EstiloBoton}" Content="Registrar entrada" Height="23" Name="btnRegistrarEntrada" Width="200" Margin="0,35" Click="btnRegistrarEntrada_Click" />
         </StackPanel>
     </Grid>
 </Window>

@@ -1,0 +1,52 @@
+﻿<Window x:Class="Vistas.ABMTipoVehiculo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:svc="clr-namespace:ClasesBase;assembly=ClasesBase"
+        Title="PETER PARKING - ABM DE TIPOS DE VEHICULOS" Height="400" Width="525" Loaded="Window_Loaded" VerticalAlignment="Top" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen" Icon="/Vistas;component/Images/mascaraspiderman.jpg" ResizeMode="CanMinimize">
+    <Window.Background>
+        <ImageBrush ImageSource="/Vistas;component/Images/abm.png" Stretch="UniformToFill" TileMode="None" />
+    </Window.Background>
+    <Window.Resources>
+        <ObjectDataProvider
+            x:Key="LIST_TV"
+            ObjectType="{x:Type svc:TrabajarTiposVehiculo}"
+            MethodName="TraerTiposVehiculos">
+        </ObjectDataProvider>
+    </Window.Resources>
+    <Canvas Name="canvas_content" DataContext="{Binding Source={StaticResource ResourceKey=LIST_TV}}" Width="480">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,25">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,15">
+                <Button Style="{StaticResource BotonNeonStyle}" Content="Agregar" Height="23" HorizontalAlignment="Left" Margin="0,0,0,0" Name="btnNuevoTV" VerticalAlignment="Top" Click="btnNuevoTV_Click" />
+                <Button Style="{StaticResource BotonNeonAzulStyle}" Content="Modificar" Height="23" HorizontalAlignment="Left" Margin="0,0,0,0" Name="btnModificar" VerticalAlignment="Top" Click="btnModificar_Click" />
+                <Button Style="{StaticResource BotonNeonAmarilloStyle}" Content="Listar" Height="23" HorizontalAlignment="Left" Margin="0,0,0,0" Name="btnListar" VerticalAlignment="Top" Click="btnListar_Click" />
+                <Button Style="{StaticResource BotonNeonRojoStyle}" Content="Eliminar" Height="23" HorizontalAlignment="Right" Margin="0,0,0,0" Name="btnEliminar" VerticalAlignment="Top" Click="btnEliminar_Click" />
+            </StackPanel>
+            <DockPanel Width="400" VerticalAlignment="Top" Margin="0,0,0,0">
+                <DockPanel DockPanel.Dock="Left" Width="200">
+                    <StackPanel Orientation="Vertical" Margin="0">
+                        <Label Style="{StaticResource lblSombra}" Content="REFERENCIA" Height="24" HorizontalContentAlignment="Center" Name="lblReferencia" Padding="0" VerticalContentAlignment="Center" Margin="0,15,0,10" />
+                        <Label Style="{StaticResource lblSombra}" Content="TVCodigo" Height="30" Name="lblTVCodigo" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                        <Label Style="{StaticResource lblSombra}" Content="Descripción" Height="30" Name="lblDescripcion" HorizontalAlignment="Center" VerticalContentAlignment="Center" />
+                        <Label Style="{StaticResource lblSombra}" Content="Tarifa" Height="30" Name="lblTarifa" HorizontalAlignment="Center" VerticalContentAlignment="Center" />
+                        <Label Style="{StaticResource lblSombra}" Content="URI de la imagen" Height="30" Name="lblImagen" HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,10" />
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Right" Width="200" Margin="0,0,0,0">
+                    <StackPanel Name="stpDatosUsuario" Orientation="Vertical" Margin="0,0,0,0">
+                        <Label Style="{StaticResource lblSombra}" Content="DATOS" Height="24" Name="lblDatosDelTV" Padding="0" Margin="0,15,0,20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="180" />
+                        <TextBox Style="{StaticResource txtRedondeado}" Text="{Binding TVCodigo}" Width="160" Height="24" Margin="0,0,0,14" VerticalContentAlignment="Center" Name="txtTVCodigo" IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+                        <TextBox Style="{StaticResource txtRedondeado}" Text="{Binding Descripcion}" Width="160" Height="24" VerticalContentAlignment="Center" Name="txtDescripcion" IsReadOnly="True" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,0,15"></TextBox>
+                        <TextBox Style="{StaticResource txtRedondeado}" Text="{Binding Tarifa}" Width="160" Height="24" VerticalContentAlignment="Center" Name="txtTarifa" IsReadOnly="True" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,15"></TextBox>
+                        <TextBox Style="{StaticResource txtRedondeado}" Text="{Binding Imagen}" Width="160" Height="24" VerticalContentAlignment="Center" Name="txtImagen" IsReadOnly="True" HorizontalAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+                    </StackPanel>
+                </DockPanel>
+            </DockPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,15">
+                <Button Style="{StaticResource EstiloBoton}" Content="&lt;&lt;" Name="btnPrimero" Click="btnPrimero_Click"></Button>
+                <Button Style="{StaticResource EstiloBoton}" Content="&lt;" Name="btnAnterior" Click="btnAnterior_Click"></Button>
+                <Button Style="{StaticResource EstiloBoton}" Content="&gt;" Name="btnSiguiente" Click="btnSiguiente_Click"></Button>
+                <Button Style="{StaticResource EstiloBoton}" Content="&gt;&gt;" Name="btnUltimo" Click="btnUltimo_Click"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Canvas>
+</Window>

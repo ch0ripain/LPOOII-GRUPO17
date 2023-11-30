@@ -3,7 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:svc="clr-namespace:ClasesBase;assembly=ClasesBase"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
-        Title="Modificar Cliente" Height="439" Width="318" FlowDirection="LeftToRight" WindowStartupLocation="CenterScreen">
+        Title="PETER PARKING" Height="439" Width="318" FlowDirection="LeftToRight" WindowStartupLocation="CenterScreen" Icon="/Vistas;component/Images/mascaraspiderman.jpg" ResizeMode="CanMinimize" Loaded="Window_Loaded">
+    <Window.Background>
+        <ImageBrush ImageSource="/Vistas;component/Images/fondodoc.png" Stretch="UniformToFill" TileMode="None" />
+    </Window.Background>
     <Window.Resources>
         <ObjectDataProvider x:Key="DATA_CLIENTE" ObjectType="{x:Type svc:TrabajarClientes}" MethodName="TraerCliente">
             <ObjectDataProvider.MethodParameters>
@@ -11,12 +14,12 @@
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </Window.Resources>
-    <Grid Background="Black">
-        <Label Content="DNI:" HorizontalAlignment="Center" Margin="10,47,0,0" Name="lblClienteDNI" Style="{StaticResource EstiloLabel}" VerticalAlignment="Top" />
-        <Label Content="Nombre:" HorizontalAlignment="Center" Margin="10,98,0,0" Name="lblClienteNombre" Style="{StaticResource EstiloLabel}" VerticalAlignment="Top" />
-        <Label Content="Apellido:" HorizontalAlignment="Center" Margin="10,149,0,0" Name="lblClienteApellido" Style="{StaticResource EstiloLabel}" VerticalAlignment="Top" />
-        <Label Content="Teléfono:" HorizontalAlignment="Center" Margin="10,203,0,0" Name="lblClienteTelefono" Style="{StaticResource EstiloLabel}" VerticalAlignment="Top" />
-        <TextBox HorizontalAlignment="Center" Margin="10,69,0,0" Name="txtClienteDNI" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" VerticalAlignment="Top" TextChanged="txtClienteDNI_TextChanged">
+    <Grid Background="{x:Null}">
+        <Label Content="DNI" Style="{StaticResource lblSombra}" HorizontalAlignment="Center" Margin="48,66,48,0" Name="lblClienteDNI" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" />
+        <Label Content="Nombre" Style="{StaticResource lblSombra}" HorizontalAlignment="Center" Margin="48,120,48,0" Name="lblClienteNombre" VerticalAlignment="Top" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label Content="Apellido" Style="{StaticResource lblSombra}" HorizontalAlignment="Center" Margin="48,171,48,0" Name="lblClienteApellido" VerticalAlignment="Top" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label Content="Teléfono" Style="{StaticResource lblSombra}" HorizontalAlignment="Center" Margin="48,225,48,0" Name="lblClienteTelefono" VerticalAlignment="Top" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBox HorizontalAlignment="Center" Margin="48,91,48,0" Name="txtClienteDNI" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" VerticalAlignment="Top" TextChanged="txtClienteDNI_TextChanged" Width="200" PreviewTextInput="txtClienteDNI_PreviewTextInput" Height="25" HorizontalContentAlignment="Center">
             <TextBox.Text>
                 <Binding Source="{StaticResource DATA_CLIENTE}"
                 Path="MethodParameters[0]"
@@ -26,25 +29,25 @@
                 ValidatesOnDataErrors="true"/>
             </TextBox.Text>
         </TextBox>
-        <TextBox HorizontalAlignment="Center" Margin="10,120,0,0" Name="txtClienteNombre" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" VerticalAlignment="Top">
+        <TextBox HorizontalAlignment="Center" Margin="48,143,48,0" Name="txtClienteNombre" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" VerticalAlignment="Top" Width="200" Height="25" HorizontalContentAlignment="Center">
             <TextBox.Text>
                 <Binding Path="Nombre" UpdateSourceTrigger="PropertyChanged"
                 ValidatesOnExceptions="true" ValidatesOnDataErrors="true" />
             </TextBox.Text>
         </TextBox>
-        <TextBox HorizontalAlignment="Center" Margin="10,174,0,0" Name="txtClienteApellido" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" VerticalAlignment="Top">
+        <TextBox HorizontalAlignment="Center" Margin="48,196,48,0" Name="txtClienteApellido" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" VerticalAlignment="Top" Width="200" Height="25" HorizontalContentAlignment="Center">
             <TextBox.Text>
                 <Binding Path="Apellido" UpdateSourceTrigger="PropertyChanged"
                 ValidatesOnExceptions="true" ValidatesOnDataErrors="true" />
             </TextBox.Text>
         </TextBox>
-        <TextBox HorizontalAlignment="Center" Margin="10,226,0,0" Name="txtClienteTelefono" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" VerticalAlignment="Top">
+        <TextBox HorizontalAlignment="Center" Margin="48,248,48,0" Name="txtClienteTelefono" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" VerticalAlignment="Top" Width="200" PreviewTextInput="txtClienteTelefono_PreviewTextInput" Height="25" HorizontalContentAlignment="Center">
             <TextBox.Text>
                 <Binding Path="Telefono" UpdateSourceTrigger="PropertyChanged"
                 ValidatesOnExceptions="true" ValidatesOnDataErrors="true" />
             </TextBox.Text>
         </TextBox>
-        <Label Content="DATOS DEL CLIENTE" Height="28" HorizontalAlignment="Center" Name="lblClienteTitulo" Style="{StaticResource EstiloLabel}" VerticalAlignment="Top" Width="120" Margin="10" />
-        <Button Content="Modificar" HorizontalAlignment="Center" Margin="93,0,83,99" Name="btnModificarCliente" Style="{StaticResource EstiloBoton}" VerticalAlignment="Bottom" Width="120" Click="btnModificarCliente_Click" />
+        <Label Content="MODIFICAR CLIENTE" Style="{StaticResource lblSombra}" Height="36" HorizontalAlignment="Center" Name="lblClienteTitulo" VerticalAlignment="Top" Width="181" Margin="58,16,58,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" />
+        <Button Content="Modificar" HorizontalAlignment="Center" Margin="48,0,48,58" Name="btnModificarCliente" Style="{StaticResource EstiloBoton}" VerticalAlignment="Bottom" Width="200" Click="btnModificarCliente_Click" />
     </Grid>
 </Window>

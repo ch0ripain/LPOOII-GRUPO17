@@ -1,0 +1,45 @@
+﻿<Window x:Class="Vistas.PresentacionApp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="PETER PARKING" Height="420" Width="420" Loaded="Window_Loaded" MaxWidth="420" MaxHeight="420" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Vistas;component/Images/mascaraspiderman.jpg">
+    <Window.Resources>
+        <!-- Definir un color personalizado -->
+        <Color x:Key="CustomProgressBarColor">#1a5575</Color>
+        <Color x:Key="CustomProgressBarBackgroundColor">#50aec5</Color>
+
+        <!-- Crear SolidColorBrush con los colores definidos -->
+        <SolidColorBrush x:Key="CustomProgressBarColorBrush" Color="{StaticResource CustomProgressBarColor}" />
+
+        <!-- Definir un estilo personalizado para la ProgressBar -->
+        <Style x:Key="CustomProgressBarStyle" TargetType="ProgressBar">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ProgressBar">
+                        <Border Background="Transparent" BorderBrush="{StaticResource CustomProgressBarColorBrush}" BorderThickness="2" CornerRadius="10">
+                            <Grid x:Name="PART_Track">
+                                <Rectangle x:Name="PART_Indicator" HorizontalAlignment="Left" >
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                            <GradientStop Color="{StaticResource CustomProgressBarColor}" Offset="0" />
+                                            <GradientStop Color="{StaticResource CustomProgressBarBackgroundColor}" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Height="378" Width="396" Background="Black">
+        <MediaElement x:Name="mediaPlayer" LoadedBehavior="Play" UnloadedBehavior="Manual" OpacityMask="Black"/>
+
+        <Image x:Name="mainImage" Visibility="Collapsed" Stretch="Fill" Margin="0,0,0,35" />
+        <ProgressBar Style="{StaticResource CustomProgressBarStyle}" Height="15" HorizontalAlignment="Center" Margin="0,328,0,0" Name="progressBar1" VerticalAlignment="Top" Width="347" />
+    </Grid>
+</Window>

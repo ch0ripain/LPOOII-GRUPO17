@@ -104,8 +104,9 @@ namespace Vistas
             if (result == MessageBoxResult.Yes)
             {
                 TrabajarUsuarios.EliminarUsuario(txtUserName.Text);
-                MessageBox.Show("Usuario eliminado con exito!", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Usuario eliminado con éxito!", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                 ActualizarListaUsuarios();
+                Vista.MoveCurrentToLast();
             }
         }
 
@@ -123,31 +124,52 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Desea confirmar la operación?\nNombre de usuario: " + txtNewUserName.Text + "\nContraseña: " + txtNewPassword.Text + "\nApellido: " + txtNewApellido.Text + "\nNombre: " + txtNewNombre.Text + "\nRol: " + cmbNewRol.SelectedValue, "Información", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            if (result == MessageBoxResult.Yes)
+            if (txtNewApellido.Text == "" || txtNewNombre.Text == "" || txtNewPassword.Text == "" || txtNewUserName.Text == "")
             {
-                Usuario oUsuario = new Usuario();
-                oUsuario.UserName = txtNewUserName.Text;
-                oUsuario.Password = txtNewPassword.Text;
-                oUsuario.Apellido = txtNewApellido.Text;
-                oUsuario.Nombre = txtNewNombre.Text;
-                oUsuario.Rol = cmbNewRol.SelectedValue.ToString();
+                MessageBox.Show("Por favor, complete todos los campos!", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Desea confirmar la operación?\nNombre de usuario: " + txtNewUserName.Text + "\nContraseña: " + txtNewPassword.Text + "\nApellido: " + txtNewApellido.Text + "\nNombre: " + txtNewNombre.Text + "\nRol: " + cmbNewRol.SelectedValue, "Información", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-                if (btnGuardar.Content == "Guardar")
+                if (result == MessageBoxResult.Yes)
                 {
-                    TrabajarUsuarios.AgregarUsuario(oUsuario);
-                    MessageBox.Show("Usuario agregado!", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
-                    ActualizarListaUsuarios();
-                    Vista.MoveCurrentToLast();
-                }
-                else if (btnGuardar.Content == "Modificar")
-                {
-                    int currentPosition = Vista.CurrentPosition;
-                    TrabajarUsuarios.ModificarUsuario(oUsuario, txtUserName.Text);
-                    MessageBox.Show("Usuario modificado!", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
-                    ActualizarListaUsuarios();
-                    Vista.MoveCurrentToPosition(currentPosition);
+                    Usuario oUsuario = new Usuario();
+                    oUsuario.UserName = txtNewUserName.Text;
+                    oUsuario.Password = txtNewPassword.Text;
+                    oUsuario.Apellido = txtNewApellido.Text;
+                    oUsuario.Nombre = txtNewNombre.Text;
+                    oUsuario.Rol = cmbNewRol.SelectedValue.ToString();
+
+                    if (btnGuardar.Content.ToString() == "Guardar")
+                    {
+                        TrabajarUsuarios.AgregarUsuario(oUsuario);
+                        MessageBox.Show("Usuario agregado!", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ActualizarListaUsuarios();
+                        Vista.MoveCurrentToLast();
+                        btnCancelar.IsEnabled = false;
+                        btnGuardar.IsEnabled = false;
+                        txtNewUserName.Visibility = Visibility.Collapsed;
+                        txtNewPassword.Visibility = Visibility.Collapsed;
+                        txtNewApellido.Visibility = Visibility.Collapsed;
+                        txtNewNombre.Visibility = Visibility.Collapsed;
+                        cmbNewRol.Visibility = Visibility.Collapsed;
+                    }
+                    else if (btnGuardar.Content.ToString() == "Modificar")
+                    {
+                        int currentPosition = Vista.CurrentPosition;
+                        TrabajarUsuarios.ModificarUsuario(oUsuario, txtUserName.Text);
+                        MessageBox.Show("Usuario modificado!", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ActualizarListaUsuarios();
+                        Vista.MoveCurrentToPosition(currentPosition);
+                        btnCancelar.IsEnabled = false;
+                        btnGuardar.IsEnabled = false;
+                        txtNewUserName.Visibility = Visibility.Collapsed;
+                        txtNewPassword.Visibility = Visibility.Collapsed;
+                        txtNewApellido.Visibility = Visibility.Collapsed;
+                        txtNewNombre.Visibility = Visibility.Collapsed;
+                        cmbNewRol.Visibility = Visibility.Collapsed;
+                    }
                 }
             }
         }

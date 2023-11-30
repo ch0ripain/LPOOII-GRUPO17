@@ -37,3 +37,4 @@ C:\Users\leand\Desktop\LPOOII-TP_Final\LPOOII_GRUPO17\ControlesDeUsuario\obj\x86
 C:\Users\leand\Desktop\LPOOII-TP_Final\LPOOII_GRUPO17\ControlesDeUsuario\obj\x86\Debug\ControlesDeUsuario.csproj.GenerateResource.Cache
 C:\Users\leand\Desktop\LPOOII-TP_Final\LPOOII_GRUPO17\ControlesDeUsuario\obj\x86\Debug\ControlesDeUsuario.exe
 C:\Users\leand\Desktop\LPOOII-TP_Final\LPOOII_GRUPO17\ControlesDeUsuario\obj\x86\Debug\ControlesDeUsuario.pdb
+C:\Users\leand\Desktop\LPOOII-TP_Final\LPOOII_GRUPO17\ControlesDeUsuario\obj\x86\Debug\ControlesDeUsuario_MarkupCompile.lref
